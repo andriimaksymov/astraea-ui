@@ -1,0 +1,79 @@
+.root
+  display: flex
+  align-items: center
+  position: relative
+  min-width: 0
+  width: 100%
+  outline: none
+  border: 1px solid transparent
+  border-radius: 8px
+
+.control
+  -webkit-tap-highlight-color: transparent
+  display: block
+  flex-grow: 1
+  font-size: 1rem
+  font-family: inherit
+  font-weight: 400
+  line-height: 1.5
+  letter-spacing: inherit
+  padding: 0.5rem 1.125rem
+  color: #1A2027
+  background: 0 0
+  border: none
+  border-radius: inherit
+  outline: 0
+
+  &::placeholder
+    color: rgba(0, 0, 0, 0.6)
+
+.adornment
+  display: flex
+  align-items: center
+  white-space: nowrap
+  max-height: 2em
+
+.startAdornment
+  padding-left: 1rem
+
+  .control
+    padding-left: 0.5rem
+
+.endAdornment
+  padding-right: 1rem
+
+  .control
+    padding-right: 0.5rem
+
+.hasError
+  .control
+    &::placeholder
+      color: var(--color-error-main, red)
+
+.contained
+  background-color: #f0f0f0
+
+  &.hasError
+    border-color: var(--color-error-main, red)
+
+.outlined
+  background-color: transparent
+  border-color: rgba(0, 0, 0, 0.42)
+
+  &.hasError
+    border-color: var(--color-error-main, red)
+
+.underline
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42)
+  border-radius: 0
+
+  &.hasError
+    border-bottom-color: var(--color-error-main, red)
+
+.disabled
+  .control
+    color: rgba(0, 0, 0, 0.38)
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.38)
+
+    &::placeholder
+      color: rgba(0, 0, 0, 0.38)

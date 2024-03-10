@@ -1,0 +1,151 @@
+.root
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  -webkit-tap-highlight-color: transparent
+  outline: 0
+  cursor: pointer
+  user-select: none
+  appearance: none
+  text-decoration: none
+  font: inherit
+  min-width: 64px
+  line-height: 1.5
+  font-size: 1rem
+  padding: 0.375rem 1rem
+  border-radius: var(--button-border-radius, 4px)
+  background-color: transparent
+  border: 1px solid transparent
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms
+
+.small
+  padding: 0.25rem 0.5rem
+  font-size: 0.875rem
+
+.medium
+  font-size: 1rem
+
+.large
+  padding: 0.5rem 1.5rem
+  font-size: 1.125rem
+
+.text
+  &.inherit
+    color: inherit
+
+    &:hover
+      text-decoration: none
+      background-color: rgba(0, 0, 0, 0.04)
+
+  &.primary
+    color: var(--color-primary-main)
+
+    &:hover
+      color: var(--color-primary-light)
+
+    &:focus, &:active
+      color: var(--color-primary-dark)
+
+  &.secondary
+    color: var(--color-secondary-main)
+
+    &:hover
+      color: var(--color-secondary-light)
+
+    &:focus, &:active
+      color: var(--color-secondary-dark)
+
+.contained
+  &.inherit
+    color: inherit
+    border-color: #e0e0e0
+    background-color: #e0e0e0
+
+    &:hover
+      text-decoration: none
+      border-color: #f5f5f5
+      background-color: #f5f5f5
+
+  &.primary
+    color: #ffffff
+    border-color: var(--color-primary-main)
+    background-color: var(--color-primary-main)
+
+    &:hover
+      border-color: var(--color-primary-light)
+      background-color: var(--color-primary-light)
+
+    &:focus, &:active
+      border-color: var(--color-primary-dark)
+      background-color: var(--color-primary-dark)
+
+  &.secondary
+    color: #ffffff
+    border-color: var(--color-secondary-main)
+    background-color: var(--color-secondary-main)
+
+    &:hover
+      border-color: var(--color-secondary-light)
+      background-color: var(--color-secondary-light)
+
+    &:focus, &:active
+      border-color: var(--color-secondary-dark)
+      background-color: var(--color-secondary-dark)
+
+.outlined
+  &.inherit
+    color: inherit
+    border-color: currentColor
+
+    &:hover
+      text-decoration: none
+      background-color: rgba(0, 0, 0, 0.04)
+
+  &.primary
+    color: var(--color-primary-main)
+    border-color: var(--color-primary-main)
+
+    &:hover
+      color: var(--color-primary-light)
+      border-color: var(--color-primary-light)
+
+    &:focus, &:active
+      color: var(--color-primary-dark)
+      border-color: var(--color-primary-dark)
+
+  &.secondary
+    color: var(--color-secondary-main)
+    border-color: var(--color-secondary-main)
+
+    &:hover
+      color: var(--color-secondary-light)
+      border-color: var(--color-secondary-light)
+
+    &:focus, &:active
+      color: var(--color-secondary-dark)
+      border-color: var(--color-secondary-dark)
+
+.fullWidth
+  width: 100%
+
+.iconWrap
+  display: inline-flex
+  width: 1.3125em
+  height: 1.3125em
+
+.icon
+  fill: currentColor
+
+.iconStart
+  margin-left: -0.25rem
+  margin-right: .625rem
+
+.iconEnd
+  margin-right: -0.25rem
+  margin-left: .625rem
+
+.disabled
+  pointer-events: none
+  opacity: .6
+  cursor: not-allowed
