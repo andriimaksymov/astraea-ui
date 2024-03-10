@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ComponentPropsWithRef, ElementType, forwardRef } from "react";
 
-import { IconButtonProps } from "../../../types/IconButton";
+import { IconButtonProps } from '../../../types';
 import { PolymorphicRef } from "../../../types/utils";
 
 import styles from "./IconButton.module.sass";

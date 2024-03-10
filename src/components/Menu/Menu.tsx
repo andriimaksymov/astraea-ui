@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 
-import Portal from "../Portal";
+import { Portal } from '../Portal';
 
-import { MenuProps } from "../../../types/Menu";
+import { MenuProps } from '../../../types';
 
 import styles from "./Menu.module.sass";
 

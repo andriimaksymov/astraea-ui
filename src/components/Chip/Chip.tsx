@@ -1,10 +1,11 @@
 import clsx from "clsx";
 import { forwardRef, UIEvent } from "react";
 
-import IconButton from "../IconButton";
+import { IconButton } from '../IconButton';
+
+import { ChipProps } from '../../../types';
 
 import styles from "./Chip.module.sass";
-import { ChipProps } from "../../../types/Chip";
 
 const CloseIcon = ({ ...props }) => (
   <svg {...props} viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">

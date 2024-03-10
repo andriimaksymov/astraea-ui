@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 
-import { SwitchProps } from "../../../types/Switch";
+import { SwitchProps } from '../../../types';
 
 import styles from "./Switch.module.sass";
 

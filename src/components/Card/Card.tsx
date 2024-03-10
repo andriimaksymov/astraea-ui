@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import clsx from "clsx";
 
 import { CardProps } from "../../../types";
+
 import styles from "./Card.module.sass";
 
 const Card = forwardRef<HTMLDivElement, CardProps>(

@@ -1,7 +1,8 @@
 import clsx from "clsx";
 
+import { CircularProgressProps } from '../../../types';
+
 import styles from "./CircularProgress.module.sass";
-import { CircularProgressProps } from "../../../types/CircularProgress";
 
 /**
  * CircularProgress component for displaying circular progress indicators.

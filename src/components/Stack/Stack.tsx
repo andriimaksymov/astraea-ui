@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { StackProps } from "../../../types/Stack";
+import { StackProps } from '../../../types';
 
 import styles from "./Stack.module.sass";
 

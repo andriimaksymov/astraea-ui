@@ -2,7 +2,7 @@ import { ComponentPropsWithRef, ElementType, forwardRef } from "react";
 import clsx from "clsx";
 
 import { PolymorphicRef } from "../../../types/utils";
-import { ButtonProps } from "../../../types/Button";
+import { ButtonProps } from '../../../types';
 
 import styles from "./Button.module.sass";
 

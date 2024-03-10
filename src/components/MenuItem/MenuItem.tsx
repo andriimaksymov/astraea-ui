@@ -1,8 +1,7 @@
 import clsx from "clsx";
 import { ComponentPropsWithRef, ElementType, forwardRef } from "react";
 
-import { ButtonProps } from '../../../types/Button';
-import { MenuItemProps } from "../../../types/MenuItem";
+import { ButtonProps, MenuItemProps } from '../../../types';
 import { PolymorphicRef } from "../../../types/utils";
 
 import styles from "./MenuItem.module.sass";

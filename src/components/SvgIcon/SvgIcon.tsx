@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { SvgIconProps } from "../../../types/SvgIcon";
+import { SvgIconProps } from '../../../types';
 
 import styles from "./SvgIcon.module.sass";
 

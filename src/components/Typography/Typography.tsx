@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ComponentPropsWithRef, ElementType, forwardRef } from "react";
 
-import { TypographyProps } from "../../../types/Typography";
+import { TypographyProps } from '../../../types';
 import { PolymorphicRef } from "../../../types/utils";
 
 import styles from "./Typography.module.sass";

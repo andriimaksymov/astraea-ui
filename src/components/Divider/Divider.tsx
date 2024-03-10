@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { DividerProps } from "../../../types/Divider";
+import { DividerProps } from '../../../types';
 
 import styles from "./Divider.module.sass";
 

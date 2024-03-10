@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 
-import { InputProps } from "../../../types/Input";
+import { InputProps } from '../../../types';
 
 import styles from "./Input.module.sass";
 

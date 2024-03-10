@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ChangeEvent, forwardRef, useState } from "react";
 
-import { CheckboxProps } from "../../../types/Checkbox";
+import { CheckboxProps } from '../../../types';
 
 import styles from "./Checkbox.module.sass";
 import { DefaultCheckedIcon, DefaultUnCheckedIcon } from "./Checkbox.Icons";

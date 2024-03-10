@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 
-import { RadioProps } from "../../../types/Radio";
+import { RadioProps } from '../../../types';
 
 import styles from "./Radio.module.sass";
 

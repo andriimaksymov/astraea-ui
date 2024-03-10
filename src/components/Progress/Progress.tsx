@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { ProgressProps } from "../../../types/Progress";
+import { ProgressProps } from '../../../types';
 
 import styles from "./Progress.module.sass";
 

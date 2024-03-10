@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 
-import { TabsProps } from "../../../types/Tabs";
+import { TabsProps } from '../../../types';
 
 import styles from "./Tabs.module.sass";
 

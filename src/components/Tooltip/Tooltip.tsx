@@ -3,7 +3,7 @@ import { MouseEvent, useRef, useState } from "react";
 
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
 
-import { TooltipProps } from "../../../types/Tooltip";
+import { TooltipProps } from '../../../types';
 
 import styles from "./Tooltip.module.sass";
 

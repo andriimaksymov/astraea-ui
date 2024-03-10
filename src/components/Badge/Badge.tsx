@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
 import { BadgeProps } from "../../../types";
+
 import styles from "./Badge.module.sass";
 
 const Badge = ({
