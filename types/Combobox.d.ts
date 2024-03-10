@@ -14,10 +14,10 @@ export type ComboboxItem = {
 export type ComboboxProps = {
   /**
    * Shadow depth, corresponds to `dp` in the spec.
-   * It accepts values between 0 and 4 inclusive.
+   * It accepts values between 0 and 5 inclusive.
    * @default 1
    */
-  elevation?: 0 | 1 | 2 | 3 | 4;
+  elevation?: 0 | 1 | 2 | 3 | 4 | 5;
   /**
    * The array of items.
    */

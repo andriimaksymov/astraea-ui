@@ -17,7 +17,7 @@ export type CardProps = {
   children?: ReactNode;
   /**
    * Shadow depth, corresponds to `dp` in the spec.
-   * It accepts values between 0 and 4 inclusive.
+   * It accepts values between 0 and 5 inclusive.
    * @default 1
    */
   elevation?: CardElevation;

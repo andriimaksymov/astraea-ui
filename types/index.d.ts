@@ -19,3 +19,4 @@ export * from "./Switch";
 export * from "./Tabs";
 export * from "./Tooltip";
 export * from "./Typography";
+export * from "./utils";

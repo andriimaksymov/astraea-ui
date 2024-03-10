@@ -17,5 +17,4 @@ export * from "./Stack";
 export * from "./SvgIcon";
 export * from "./Switch";
 export * from "./Tabs";
-export * from "./Tooltip";
 export * from "./Typography";
