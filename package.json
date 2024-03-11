@@ -1,6 +1,6 @@
 {
   "name": "astraea-ui",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -18,7 +18,7 @@
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "publish": "npm publish"
+    "publish": "npm publish --access public"
   },
   "husky": {
     "hooks": {
