@@ -1,6 +1,6 @@
 {
   "name": "astraea-ui",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -22,8 +22,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run publish"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
