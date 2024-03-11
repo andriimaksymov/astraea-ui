@@ -11,8 +11,8 @@ describe("Badge component", () => {
       </Badge>,
     );
 
-    expect(getByText("Child Component")).toBeInTheDocument();
-    expect(getByText("5")).toBeInTheDocument();
+    expect(getByText("Child Component")).toBeDefined();
+    expect(getByText("5")).toBeDefined();
   });
 
   it("should have custom className", () => {
@@ -22,7 +22,7 @@ describe("Badge component", () => {
       </Badge>,
     );
 
-    expect(container.firstChild).toHaveClass("custom-class");
+    expect(container.firstElementChild.classList).include(/custom-class/);
   });
 
   it("should be invisible", () => {
@@ -32,7 +32,7 @@ describe("Badge component", () => {
       </Badge>,
     );
 
-    expect(container.firstChild).toHaveClass(/invisible/);
+    expect(container.firstElementChild.classList).include(/invisible/);
   });
 
   it("should have primary color", () => {
@@ -42,7 +42,7 @@ describe("Badge component", () => {
       </Badge>,
     );
 
-    expect(container.firstChild.childNodes[1]).toHaveClass(/primaryColor/);
+    expect(container.firstChild.childNodes[1]).include(/primaryColor/);
   });
 
   it("should have primary color", () => {
@@ -52,6 +52,6 @@ describe("Badge component", () => {
       </Badge>,
     );
 
-    expect(container.firstChild.childNodes[1]).toHaveClass(/primaryColor/);
+    expect(container.firstChild.childNodes[1]).include(/primaryColor/);
   });
 });
