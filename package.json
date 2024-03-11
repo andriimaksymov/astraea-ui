@@ -1,6 +1,6 @@
 {
   "name": "astraea-ui",
-  "version": "1.0.24",
+  "version": "1.0.26",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -19,11 +19,6 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "publish": "npm publish --access public"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{ts,tsx}": [
