@@ -1,9 +1,36 @@
 import clsx from "clsx";
-import { forwardRef } from "react";
-
-import { InputProps } from '../../../types';
+import { ComponentPropsWithoutRef, forwardRef, ReactNode } from "react";
 
 import styles from "./Input.module.sass";
+
+export type InputProps = {
+  /**
+   * Override or extend the style applied to the input.
+   */
+  controlClassName?: string;
+  /**
+   * Override or extend the style applied to the input wrapper.
+   */
+  className?: string;
+  /**
+   * End input adornment for this component.
+   */
+  endAdornment?: ReactNode;
+  /**
+   * If true the component will have error styles.
+   * @default false
+   */
+  hasError?: boolean;
+  /**
+   * Start input adornment for this component.
+   */
+  startAdornment?: ReactNode;
+  /**
+   * The variant to use.
+   * @default 'contained'
+   */
+  variant?: "contained" | "outlined" | "underline";
+} & ComponentPropsWithoutRef<"input">;
 
 /**
  * Input component for receiving user input.

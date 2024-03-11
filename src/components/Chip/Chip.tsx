@@ -1,11 +1,53 @@
 import clsx from "clsx";
-import { forwardRef, UIEvent } from "react";
+import { ElementType, forwardRef, ReactNode, UIEvent } from "react";
 
-import { IconButton } from '../IconButton';
-
-import { ChipProps } from '../../../types';
+import { IconButton } from "../IconButton";
 
 import styles from "./Chip.module.sass";
+
+export type ChipProps = {
+  /**
+   * Override or extend the style applied to the component.
+   */
+  className?: string;
+  /**
+   * The content render inside the chip.
+   */
+  children?: ReactNode;
+  /**
+   * The color of component.
+   * @default 'default'
+   */
+  color?: "default" | "primary" | "secondary";
+  /**
+   * Override the default delete icon element. Shown only if 'onDelete' is set.
+   */
+  deleteIcon?: ElementType;
+  /**
+   * If 'true' the component is disabled.
+   * @default false
+   */
+  disabled?: boolean;
+  /**
+   * Callback fired when the delete icon is clicked.
+   * If set, the delete icon will be shown.
+   */
+  onDelete?: () => void;
+  /**
+   * Callback fired when the chip is clicked.
+   * If set, cursor will be 'pointer'.
+   */
+  onClick?: () => void;
+  /**
+   * If 'true' chip is rounded.
+   * @default false
+   */
+  round?: boolean;
+  /**
+   * The variant to use.
+   */
+  variant?: "outlined" | "contained";
+};
 
 const CloseIcon = ({ ...props }) => (
   <svg {...props} viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">

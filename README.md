@@ -1,6 +1,6 @@
 # Astraea UI
 
-[![npm version](https://badge.fury.io/js/your-ui-library.svg)](https://badge.fury.io/js/your-ui-library)
+[![npm version](https://img.shields.io/npm/v/astraea-ui.svg?style=flat)](https://www.npmjs.com/package/astraea-ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
@@ -12,4 +12,4 @@ Astraea UI is a collection of reusable components and styles for building beauti
 You can install Your UI Library Name via npm:
 
 ```bash
-npm install astraea-ui
+npm install --save astraea-ui

@@ -1,9 +1,23 @@
 import clsx from "clsx";
-import { forwardRef } from "react";
-
-import { RadioProps } from '../../../types';
+import { ComponentPropsWithoutRef, forwardRef, ReactNode } from "react";
 
 import styles from "./Radio.module.sass";
+
+export type RadioProps = {
+  /**
+   * Override or extend the style applied to the component
+   */
+  className?: string;
+  /**
+   * A text or an element to be used in an enclosing label element.
+   */
+  label?: ReactNode;
+  /**
+   * The position of the label.
+   * @default 'end'
+   */
+  labelPlacement?: "start" | "end";
+} & ComponentPropsWithoutRef<"input">;
 
 const DefaultIcon = ({ ...props }) => (
   <svg {...props} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

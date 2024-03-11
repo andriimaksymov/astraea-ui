@@ -1,10 +1,35 @@
 import clsx from "clsx";
-import { ComponentPropsWithRef, ElementType, forwardRef } from "react";
+import {
+  ComponentPropsWithRef,
+  ElementType,
+  forwardRef,
+  ReactNode,
+} from "react";
 
-import { ButtonProps, MenuItemProps } from '../../../types';
-import { PolymorphicRef } from "../../../types/utils";
+import { PolymorphicRef } from "../../../types";
+import { ButtonProps } from "../Button";
 
 import styles from "./MenuItem.module.sass";
+
+export type MenuItemProps<T extends ElementType> = {
+  /**
+   * The content of the component.
+   */
+  children?: ReactNode;
+  /**
+   * Override or extend the style applied to the component.
+   */
+  className?: string;
+  /**
+   * The component to use.
+   */
+  component?: T;
+  /**
+   * If 'true' the component has active styles.
+   * @default false
+   */
+  isActive?: boolean;
+};
 
 /**
  * Base MenuItem component.

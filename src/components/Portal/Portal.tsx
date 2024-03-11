@@ -1,7 +1,11 @@
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { createPortal } from "react-dom";
 
-import { PortalProps } from '../../../types';
+export type PortalProps = {
+  children?: ReactNode;
+  className?: string;
+  node?: Element;
+};
 
 const Portal = ({ children, className, node }: PortalProps) => {
   const mount = document.getElementById("portal-root");
