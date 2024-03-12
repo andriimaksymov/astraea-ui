@@ -12,7 +12,6 @@ const PlusIcon = () => (
 describe("Button component", () => {
   it("should render button correctly", () => {
     render(<Button>Button</Button>);
-
     const button = screen.getByRole("button");
 
     expect(button).toBeDefined();
@@ -31,11 +30,11 @@ describe("Button component", () => {
   });
 
   it("should render button with primary color", () => {
-    render(<Button>Link Button</Button>);
+    render(<Button color="primary">Link Button</Button>);
     const button = screen.getByRole("button");
 
     expect(button).toBeDefined();
-    expect(button.classList).include(/primary/);
+    expect(button.className).toContain("primary");
   });
 
   it("should render disabled button and have 'disabled' className when disabled props is true", () => {
@@ -43,7 +42,7 @@ describe("Button component", () => {
     const button = screen.getByRole("button");
 
     expect(button).toBeDefined();
-    expect(button.classList.contains("disabled")).not.toBeNull();
+    expect(button.className).toContain("disabled");
     expect(button.getAttribute("disabled")).not.toBeNull();
   });
 
@@ -51,13 +50,21 @@ describe("Button component", () => {
     render(<Button startIcon={PlusIcon}>Button with start icon</Button>);
 
     const button = screen.getByRole("button");
-    expect(button.firstElementChild.classList).include(/iconWrap/);
+    const svg = button.querySelector("svg");
+
+    expect(button).toBeDefined();
+    expect(svg).toBeDefined();
+    expect(button.firstElementChild.childNodes[0]).toBe(svg);
   });
 
   it("should render button with icon at the end", () => {
-    render(<Button endIcon={PlusIcon}>Button with start icon</Button>);
+    render(<Button endIcon={PlusIcon}>Button with end icon</Button>);
 
     const button = screen.getByRole("button");
-    expect(button.lastElementChild.classList).include(/iconWrap/);
+    const svg = button.querySelector("svg");
+
+    expect(button).toBeDefined();
+    expect(svg).toBeDefined();
+    expect(button.lastElementChild.childNodes[0]).toBe(svg);
   });
 });

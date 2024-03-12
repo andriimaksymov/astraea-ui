@@ -55,6 +55,7 @@ const CircularProgress = ({
 
   return (
     <div
+      data-testid="CircularProgress"
       className={clsx(styles.root, styles[color], styles[variant], className)}
       style={{
         width: size,

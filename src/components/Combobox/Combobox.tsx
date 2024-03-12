@@ -106,7 +106,7 @@ function Combobox({
   };
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} data-testid="astraea-combobox">
       <Input
         endAdornment={
           <IconButton

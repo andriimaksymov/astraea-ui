@@ -1,18 +1,17 @@
 import clsx from "clsx";
-import React from "react";
+import {
+  ChangeEvent,
+  ComponentPropsWithoutRef,
+  ElementType,
+  forwardRef,
+  ReactNode,
+  useState,
+} from "react";
 
 import styles from "./Checkbox.module.sass";
 import { DefaultCheckedIcon, DefaultUnCheckedIcon } from "./Checkbox.Icons";
 
 export type CheckboxProps = {
-  id?: string;
-  checked?: boolean;
-  disabled?: boolean;
-  defaultChecked?: boolean;
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean,
-  ) => void;
   /**
    * Override or extend the style applied to the component.
    */
@@ -20,11 +19,11 @@ export type CheckboxProps = {
   /**
    * Icon to be used if checkbox is checked.
    */
-  checkedIcon?: React.ElementType;
+  checkedIcon?: ElementType;
   /**
    * A text or an element to be used in an enclosing label element.
    */
-  label?: React.ReactNode;
+  label?: ReactNode;
   /**
    * The position of the label.
    * @default 'end'
@@ -33,10 +32,10 @@ export type CheckboxProps = {
   /**
    * Icon to be used if checkbox is unchecked.
    */
-  icon?: React.ElementType;
-} & React.ComponentPropsWithoutRef<"input">;
+  icon?: ElementType;
+} & ComponentPropsWithoutRef<"input">;
 
-const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (
     {
       className,
@@ -50,7 +49,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   ) => {
     // Initialize checked state based on props
     const defaultChecked = props.checked ?? props.defaultChecked ?? false;
-    const [checked, setChecked] = React.useState<boolean>(defaultChecked);
+    const [checked, setChecked] = useState<boolean>(defaultChecked);
 
     const classNames = clsx(
       styles.root,
@@ -64,7 +63,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       },
     );
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       setChecked(!checked);
       props.onChange?.(e);
     };
