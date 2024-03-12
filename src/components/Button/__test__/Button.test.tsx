@@ -47,14 +47,14 @@ describe("Button component", () => {
     expect(button.getAttribute("disabled")).not.toBeNull();
   });
 
-  it("should render button with start icon", () => {
+  it("should render button with icon at the start", () => {
     render(<Button startIcon={PlusIcon}>Button with start icon</Button>);
 
     const button = screen.getByRole("button");
     expect(button.firstElementChild.classList).include(/iconWrap/);
   });
 
-  it("should render button with end icon", () => {
+  it("should render button with icon at the end", () => {
     render(<Button endIcon={PlusIcon}>Button with start icon</Button>);
 
     const button = screen.getByRole("button");

@@ -45,13 +45,9 @@ describe("Badge component", () => {
     expect(container.firstChild.childNodes[1]).include(/primaryColor/);
   });
 
-  it("should have primary color", () => {
-    const { container } = render(
-      <Badge badgeContent={5} color="primary">
-        <div>Child Component</div>
-      </Badge>,
-    );
+  it("should render badge in dot variation without content", () => {
+    const { container } = render(<Badge badgeContent={5} variant="dot" />);
 
-    expect(container.firstChild.childNodes[1]).include(/primaryColor/);
+    expect(container.firstElementChild.childNodes[0].firstChild).toBeNull();
   });
 });
