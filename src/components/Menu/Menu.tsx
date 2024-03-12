@@ -174,6 +174,8 @@ const Menu = (props: MenuProps) => {
         ...(fullWidth && { width }),
       });
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [menuRef, anchorEl]);
 
   return isOpen ? (
