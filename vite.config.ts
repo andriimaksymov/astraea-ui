@@ -1,8 +1,8 @@
 /// <reference types="vitest" />
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import react from "@vitejs/plugin-react";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
+import { peerDependencies } from "./package.json";
 
 export default defineConfig({
   build: {
@@ -13,7 +13,7 @@ export default defineConfig({
       formats: ["cjs", "es"], // Specifies the output formats (CommonJS and ES modules).
     },
     rollupOptions: {
-      external: ["src/main.css"],
+      external: [...Object.keys(peerDependencies), "src/main.css"],
     },
     sourcemap: true, // Generates source maps for debugging.
     emptyOutDir: true, // Clears the output directory before building.
@@ -24,7 +24,6 @@ export default defineConfig({
     setupFiles: "./setupTests.ts",
   },
   plugins: [
-    react(),
     libInjectCss(),
     dts(), // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
   ],
