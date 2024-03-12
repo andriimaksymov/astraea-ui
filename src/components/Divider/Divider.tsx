@@ -36,7 +36,7 @@ const Divider = ({
   });
 
   return (
-    <div className={classNames}>
+    <div className={classNames} data-testid="astraea-divider">
       <span className={styles.inner}>{children}</span>
     </div>
   );
