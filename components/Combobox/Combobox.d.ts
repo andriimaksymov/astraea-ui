@@ -45,5 +45,5 @@ export type ComboboxProps = {
  * @returns {JSX.Element} The Combobox component.
  */
 export declare const DEFAULT_COMBOBOX_ITEMS_LENGTH = 5;
-declare function Combobox({ elevation, items, maxItems, value, onInputChange, onSelect, ...inputProps }: ComboboxProps): import("react/jsx-runtime").JSX.Element;
+declare function Combobox({ elevation, items, maxItems, value, onInputChange, onSelect, ...inputProps }: ComboboxProps): import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Combobox;

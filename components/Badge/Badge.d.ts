@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from '../../../node_modules/react';
 export interface BadgeOrigin {
     vertical: "top" | "bottom";
     horizontal: "left" | "right";
@@ -41,5 +41,5 @@ export type BadgeProps = {
      */
     variant?: "dot" | "standard";
 };
-declare const Badge: ({ anchorOrigin, badgeContent, className, children, color, invisible, variant, ...props }: BadgeProps) => import("react/jsx-runtime").JSX.Element;
+declare const Badge: ({ anchorOrigin, badgeContent, className, children, color, invisible, variant, ...props }: BadgeProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Badge;

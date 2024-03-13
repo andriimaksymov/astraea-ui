@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from '../../../node_modules/react';
 export type TabsTab = {
     /**
      * The label of the tab.
@@ -51,5 +51,5 @@ export type TabsProps = {
  * @param {TabsProps} props - The props for the Tabs component.
  * @returns {JSX.Element} - The rendered Tabs component.
  */
-declare const Tabs: ({ className, tabs, selectedTab, variant, orientation, onChange, }: TabsProps) => import("react/jsx-runtime").JSX.Element;
+declare const Tabs: ({ className, tabs, selectedTab, variant, orientation, onChange, }: TabsProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Tabs;

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from '../../../node_modules/react';
 export type MenuOrigin = {
     vertical: "top" | "center" | "bottom";
     horizontal: "left" | "center" | "right";
@@ -77,5 +77,5 @@ export type MenuProps = {
  * @param {MenuProps} props - The props for the Menu component.
  * @returns {JSX.Element} - The rendered Menu component.
  */
-declare const Menu: (props: MenuProps) => import("react/jsx-runtime").JSX.Element | null;
+declare const Menu: (props: MenuProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element | null;
 export default Menu;

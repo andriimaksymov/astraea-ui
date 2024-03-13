@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import { ComponentPropsWithoutRef, ElementType, ReactNode } from '../../../node_modules/react';
 export type CheckboxProps = {
     /**
      * Override or extend the style applied to the component.
@@ -22,7 +22,7 @@ export type CheckboxProps = {
      */
     icon?: ElementType;
 } & ComponentPropsWithoutRef<"input">;
-declare const Checkbox: import("react").ForwardRefExoticComponent<{
+declare const Checkbox: import('../../../node_modules/react').ForwardRefExoticComponent<{
     /**
      * Override or extend the style applied to the component.
      */
@@ -44,5 +44,5 @@ declare const Checkbox: import("react").ForwardRefExoticComponent<{
      * Icon to be used if checkbox is unchecked.
      */
     icon?: ElementType | undefined;
-} & Omit<import("react").DetailedHTMLProps<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "ref"> & import("react").RefAttributes<HTMLInputElement>>;
+} & Omit<import('../../../node_modules/react').DetailedHTMLProps<import('../../../node_modules/react').InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "ref"> & import('../../../node_modules/react').RefAttributes<HTMLInputElement>>;
 export default Checkbox;

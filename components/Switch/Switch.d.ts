@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent, ReactNode } from '../../../node_modules/react';
 export type SwitchSize = "small" | "medium" | "large";
 export type SwitchLabelPlacement = "top" | "start" | "bottom" | "end";
 export type SwitchProps = {
@@ -45,5 +45,5 @@ export type SwitchProps = {
  * @param {React.Ref<HTMLDivElement>} ref The ref for the Chip.
  * @returns {JSX.Element} The Chip component.
  */
-declare const Switch: import("react").ForwardRefExoticComponent<SwitchProps & import("react").RefAttributes<HTMLDivElement>>;
+declare const Switch: import('../../../node_modules/react').ForwardRefExoticComponent<SwitchProps & import('../../../node_modules/react').RefAttributes<HTMLDivElement>>;
 export default Switch;

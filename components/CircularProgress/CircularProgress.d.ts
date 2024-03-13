@@ -36,5 +36,5 @@ export type CircularProgressProps = {
  * @param {CircularProgressProps} props The props for the CircularProgress component.
  * @returns {JSX.Element} The CircularProgress component.
  */
-declare const CircularProgress: ({ color, className, size, thickness, value, variant, }: CircularProgressProps) => import("react/jsx-runtime").JSX.Element;
+declare const CircularProgress: ({ color, className, size, thickness, value, variant, }: CircularProgressProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default CircularProgress;

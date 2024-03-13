@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from '../../../node_modules/react';
 export type DividerProps = {
     /**
      * Override or extend styles applied to the component.
@@ -19,5 +19,5 @@ export type DividerProps = {
  * @param {DividerProps} props The props for the Divider component.
  * @returns {JSX.Element} The Divider component.
  */
-declare const Divider: ({ className, orientation, children, }: DividerProps) => import("react/jsx-runtime").JSX.Element;
+declare const Divider: ({ className, orientation, children, }: DividerProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Divider;

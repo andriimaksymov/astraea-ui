@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { ComponentPropsWithoutRef, ReactNode } from '../../../node_modules/react';
 export type RadioProps = {
     /**
      * Override or extend the style applied to the component
@@ -19,7 +19,7 @@ export type RadioProps = {
  * @param {RadioProps} props - The props for the Radio component.
  * @returns {JSX.Element} - The rendered Radio component.
  */
-declare const Radio: import("react").ForwardRefExoticComponent<{
+declare const Radio: import('../../../node_modules/react').ForwardRefExoticComponent<{
     /**
      * Override or extend the style applied to the component
      */
@@ -33,5 +33,5 @@ declare const Radio: import("react").ForwardRefExoticComponent<{
      * @default 'end'
      */
     labelPlacement?: "end" | "start" | undefined;
-} & Omit<import("react").DetailedHTMLProps<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "ref"> & import("react").RefAttributes<HTMLInputElement>>;
+} & Omit<import('../../../node_modules/react').DetailedHTMLProps<import('../../../node_modules/react').InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "ref"> & import('../../../node_modules/react').RefAttributes<HTMLInputElement>>;
 export default Radio;

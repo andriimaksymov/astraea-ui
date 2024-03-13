@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from '../../../node_modules/react';
 export type CardElevation = 0 | 1 | 2 | 3 | 4 | 5;
 export type CardProps = {
     /**
@@ -30,7 +30,7 @@ export type CardProps = {
      */
     padding?: "none" | "small" | "medium" | "large";
 } & HTMLAttributes<HTMLDivElement>;
-declare const Card: import("react").ForwardRefExoticComponent<{
+declare const Card: import('../../../node_modules/react').ForwardRefExoticComponent<{
     /**
      * Border color of the card.
      */
@@ -59,5 +59,5 @@ declare const Card: import("react").ForwardRefExoticComponent<{
      * @default "medium"
      */
     padding?: "small" | "medium" | "large" | "none" | undefined;
-} & HTMLAttributes<HTMLDivElement> & import("react").RefAttributes<HTMLDivElement>>;
+} & HTMLAttributes<HTMLDivElement> & import('../../../node_modules/react').RefAttributes<HTMLDivElement>>;
 export default Card;

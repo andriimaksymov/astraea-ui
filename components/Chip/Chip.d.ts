@@ -1,4 +1,4 @@
-import { ElementType, ReactNode } from "react";
+import { ElementType, ReactNode } from '../../../node_modules/react';
 export type ChipProps = {
     /**
      * Override or extend the style applied to the component.
@@ -48,5 +48,5 @@ export type ChipProps = {
  * @param {React.Ref<HTMLDivElement>} ref The ref for the Chip.
  * @returns {JSX.Element} The Chip component.
  */
-declare const Chip: import("react").ForwardRefExoticComponent<ChipProps & import("react").RefAttributes<HTMLDivElement>>;
+declare const Chip: import('../../../node_modules/react').ForwardRefExoticComponent<ChipProps & import('../../../node_modules/react').RefAttributes<HTMLDivElement>>;
 export default Chip;

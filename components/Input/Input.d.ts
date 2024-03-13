@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { ComponentPropsWithoutRef, ReactNode } from '../../../node_modules/react';
 export type InputProps = {
     /**
      * Override or extend the style applied to the input.
@@ -33,7 +33,7 @@ export type InputProps = {
  * @param {React.Ref<HTMLInputElement>} ref - The ref to attach to the input element.
  * @returns {JSX.Element} - The rendered Input component.
  */
-declare const Input: import("react").ForwardRefExoticComponent<{
+declare const Input: import('../../../node_modules/react').ForwardRefExoticComponent<{
     /**
      * Override or extend the style applied to the input.
      */
@@ -60,5 +60,5 @@ declare const Input: import("react").ForwardRefExoticComponent<{
      * @default 'contained'
      */
     variant?: "contained" | "outlined" | "underline" | undefined;
-} & Omit<import("react").DetailedHTMLProps<import("react").InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "ref"> & import("react").RefAttributes<HTMLInputElement>>;
+} & Omit<import('../../../node_modules/react').DetailedHTMLProps<import('../../../node_modules/react').InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "ref"> & import('../../../node_modules/react').RefAttributes<HTMLInputElement>>;
 export default Input;

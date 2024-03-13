@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ElementType, ReactNode } from "react";
+import { ComponentPropsWithRef, ElementType, ReactNode } from '../../../node_modules/react';
 export declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type ButtonProps<T extends ElementType> = {
     /**
@@ -47,5 +47,5 @@ export type ButtonProps<T extends ElementType> = {
      */
     variant?: "contained" | "outlined" | "text";
 };
-declare const Button: <T extends ElementType = "button">({ children, className, component, color, disabled, endIcon: EndIcon, size, startIcon: StartIcon, variant, fullWidth, ...rest }: ButtonProps<T> & Omit<ComponentPropsWithRef<T>, keyof ButtonProps<T>>, ref: PolymorphicRef<T>) => import("react/jsx-runtime").JSX.Element;
+declare const Button: <T extends ElementType = "button">({ children, className, component, color, disabled, endIcon: EndIcon, size, startIcon: StartIcon, variant, fullWidth, ...rest }: ButtonProps<T> & Omit<ComponentPropsWithRef<T>, keyof ButtonProps<T>>, ref: PolymorphicRef<T>) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Button;

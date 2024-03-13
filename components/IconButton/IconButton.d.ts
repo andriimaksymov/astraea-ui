@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ElementType } from "react";
+import { ComponentPropsWithRef, ElementType } from '../../../node_modules/react';
 import { PolymorphicRef } from "../../../types";
 export type IconButtonProps<T extends ElementType> = {
     /**
@@ -38,5 +38,5 @@ export type IconButtonProps<T extends ElementType> = {
      */
     size?: "small" | "medium" | "large";
 };
-declare const IconButton: <T extends ElementType = "button">({ component, icon: Icon, round, color, className, iconClassName, disabled, size, ...rest }: IconButtonProps<T> & Omit<ComponentPropsWithRef<T>, keyof IconButtonProps<T>>, ref: PolymorphicRef<T>) => import("react/jsx-runtime").JSX.Element;
+declare const IconButton: <T extends ElementType = "button">({ component, icon: Icon, round, color, className, iconClassName, disabled, size, ...rest }: IconButtonProps<T> & Omit<ComponentPropsWithRef<T>, keyof IconButtonProps<T>>, ref: PolymorphicRef<T>) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default IconButton;

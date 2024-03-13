@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from '../../../node_modules/react';
 export type StackProps = {
     /**
      * Defines the align-items style property. It is applied for all screen sizes.
@@ -35,5 +35,5 @@ export type StackProps = {
  * @param {StackProps} props - The props for the Stack component.
  * @returns {JSX.Element} - The rendered Stack component.
  */
-declare const Stack: ({ align, justify, direction, spacing, wrap, className, children, ...rest }: StackProps) => import("react/jsx-runtime").JSX.Element;
+declare const Stack: ({ align, justify, direction, spacing, wrap, className, children, ...rest }: StackProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Stack;
