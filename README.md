@@ -3,13 +3,15 @@
 [![npm version](https://img.shields.io/npm/v/astraea-ui.svg?style=flat)](https://www.npmjs.com/package/astraea-ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://andriimaksymov.github.io/astraea-ui)
+
 ## Description
 
 Astraea UI is a collection of reusable components and styles for building beautiful user interfaces in React.
 
 ## Features
 
-Provide 60+ high quality general purpose components
+Provide 20+ high quality general purpose components
 
 *  🛠   Components are very flexible
 *  🛠️   Support color customization

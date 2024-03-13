@@ -1,8 +1,12 @@
-import { FC } from "react";
+import * as React from "react";
 import Card from "../Card";
-import { CardProps } from "../../../../types";
+import { CardProps } from "../Card";
 
-const Example: FC<CardProps> = ({ elevation = 1, children, ...props }) => {
+const Example: React.FC<CardProps> = ({
+  elevation = 1,
+  children,
+  ...props
+}) => {
   return (
     <div
       style={{
