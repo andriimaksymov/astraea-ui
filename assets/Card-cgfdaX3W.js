@@ -1,8 +1,8 @@
-import{j as e,C as i,D as o}from"./Card.stories-BQ1-Z26k.js";import{useMDXComponents as s}from"./index-DLsXyOuj.js";import{M as c,C as l}from"./index-DsbpbMHw.js";import"./index-CsdIBAqE.js";import"./iframe-DnwQtQI-.js";import"../sb-preview/runtime.js";import"./index-5f0m1pej.js";import"./index-DmEeU3Of.js";import"./index-DrFu-skq.js";function d(r){const n={code:"code",h1:"h1",h2:"h2",h3:"h3",h4:"h4",p:"p",pre:"pre",...s(),...r.components};return e.jsxs(e.Fragment,{children:[e.jsx(c,{title:"Card",component:i}),`
+import{j as e}from"./clsx-BKsCbDk3.js";import{useMDXComponents as o}from"./index-DLsXyOuj.js";import{M as i,C as s}from"./index-2Zdj1uBM.js";import{C as c,D as l}from"./Card.stories-DeLSGN6K.js";import"./index-CsdIBAqE.js";import"./iframe-tqGaLA5O.js";import"../sb-preview/runtime.js";import"./index-5f0m1pej.js";import"./index-DmEeU3Of.js";import"./index-DrFu-skq.js";import"./Card-DO5sIWGE.js";function d(r){const n={code:"code",h1:"h1",h2:"h2",h3:"h3",h4:"h4",p:"p",pre:"pre",...o(),...r.components};return e.jsxs(e.Fragment,{children:[e.jsx(i,{title:"Card",component:c}),`
 `,e.jsx(n.h1,{id:"card",children:"Card"}),`
 `,e.jsx(n.p,{children:"A card component for displaying content with a border, padding, and optional elevation."}),`
 `,e.jsx(n.h4,{id:"example",children:"Example"}),`
-`,e.jsx(l,{of:o}),`
+`,e.jsx(s,{of:l}),`
 `,e.jsx(n.h2,{id:"usage",children:"Usage"}),`
 `,e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-ts",children:`import { Card } from "awesome-ui-library";
 
@@ -28,4 +28,4 @@ export default Example;
 `,e.jsxs(n.h3,{id:"padding-string",children:[e.jsx(n.code,{children:"padding"})," (string)"]}),`
 `,e.jsxs(n.p,{children:["The padding size of the card. Options: ",e.jsx(n.code,{children:"none"}),", ",e.jsx(n.code,{children:"small"}),", ",e.jsx(n.code,{children:"medium"}),", ",e.jsx(n.code,{children:"large"}),". Default: ",e.jsx(n.code,{children:"medium"}),"."]}),`
 `,e.jsxs(n.h3,{id:"elevation-number",children:[e.jsx(n.code,{children:"elevation"})," (number)"]}),`
-`,e.jsxs(n.p,{children:["The elevation level of the card. This determines the shadow effect. Options: ",e.jsx(n.code,{children:"0"}),", ",e.jsx(n.code,{children:"1"}),", ",e.jsx(n.code,{children:"2"}),", ",e.jsx(n.code,{children:"3"}),", ",e.jsx(n.code,{children:"4"}),", ",e.jsx(n.code,{children:"5"}),". Default: ",e.jsx(n.code,{children:"1"}),"."]})]})}function g(r={}){const{wrapper:n}={...s(),...r.components};return n?e.jsx(n,{...r,children:e.jsx(d,{...r})}):d(r)}export{g as default};
+`,e.jsxs(n.p,{children:["The elevation level of the card. This determines the shadow effect. Options: ",e.jsx(n.code,{children:"0"}),", ",e.jsx(n.code,{children:"1"}),", ",e.jsx(n.code,{children:"2"}),", ",e.jsx(n.code,{children:"3"}),", ",e.jsx(n.code,{children:"4"}),", ",e.jsx(n.code,{children:"5"}),". Default: ",e.jsx(n.code,{children:"1"}),"."]})]})}function b(r={}){const{wrapper:n}={...o(),...r.components};return n?e.jsx(n,{...r,children:e.jsx(d,{...r})}):d(r)}export{b as default};
