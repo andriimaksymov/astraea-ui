@@ -60,10 +60,12 @@ const ChevronDownIcon = ({ ...props }) => (
  * @returns {JSX.Element} The Combobox component.
  */
 
+export const DEFAULT_COMBOBOX_ITEMS_LENGTH = 5;
+
 function Combobox({
   elevation = 1,
   items = [],
-  maxItems = 5,
+  maxItems = DEFAULT_COMBOBOX_ITEMS_LENGTH,
   value,
   onInputChange,
   onSelect,
@@ -120,32 +122,31 @@ function Combobox({
           onKeyDown: handleInputKeyDown,
         })}
       />
-      <div
-        className={clsx(styles.suggestionMenu, {
-          [styles[`elevation${elevation}`]]: elevation && elevation > 0,
-          [styles.openSuggestionMenu]: isOpen && items.length > 0,
-        })}
-        {...getMenuProps()}
-      >
-        {isOpen && (
-          <>
-            {limitedItems.map((item, index) => (
-              <div
-                key={item.key ?? index}
-                className={clsx(styles.suggestion, {
-                  [styles.highlightedSuggestion]: highlightedIndex === index,
-                })}
-                {...getItemProps({
-                  item,
-                  index,
-                })}
-              >
-                {item.value}
-              </div>
-            ))}
-          </>
-        )}
-      </div>
+      {isOpen && items.length > 0 && (
+        <div
+          data-testid="astraea-combobox-menu"
+          className={clsx(styles.suggestionMenu, {
+            [styles[`elevation${elevation}`]]: elevation && elevation > 0,
+            [styles.openSuggestionMenu]: isOpen && items.length > 0,
+          })}
+          {...getMenuProps()}
+        >
+          {limitedItems.map((item, index) => (
+            <div
+              key={item.key ?? index}
+              className={clsx(styles.suggestion, {
+                [styles.highlightedSuggestion]: highlightedIndex === index,
+              })}
+              {...getItemProps({
+                item,
+                index,
+              })}
+            >
+              {item.value}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
