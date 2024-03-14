@@ -1,23 +1,16 @@
 import { Meta } from "@storybook/react";
 import { ChangeEvent, useState } from "react";
 
-import Badge, { BadgeOrigin, BadgeProps } from "../Badge";
 import { Radio, Stack, SvgIcon, Switch, Typography } from "../../index";
 import MailIcon from "../../../assets/icons/MailIcon";
+
+import Badge, { BadgeOrigin, BadgeProps } from "../Badge";
 
 export default {
   title: "Badge",
   component: Badge,
+  tags: ["autodocs"],
   argTypes: {
-    badgeContent: {
-      control: "text",
-    },
-    className: {
-      control: "text",
-    },
-    invisible: {
-      control: "boolean",
-    },
     anchorOrigin: {
       control: {
         type: "select",
@@ -26,10 +19,17 @@ export default {
           "Top Left": { vertical: "top", horizontal: "left" },
           "Bottom Right": { vertical: "bottom", horizontal: "right" },
           "Bottom Left": { vertical: "bottom", horizontal: "left" },
-        } as {
-          [key: string]: BadgeOrigin;
         },
       },
+    },
+    badgeContent: {
+      control: "text",
+    },
+    className: {
+      control: "text",
+    },
+    invisible: {
+      control: "boolean",
     },
     variant: {
       control: {

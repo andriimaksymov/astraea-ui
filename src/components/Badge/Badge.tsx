@@ -76,9 +76,16 @@ const Badge = ({
     styles[`${color}Color`],
     styles[variant],
     {
-      [styles[
-        `anchorOrigin${anchorOrigin.vertical}${anchorOrigin.horizontal}`
-      ]]: anchorOrigin.vertical && anchorOrigin.horizontal,
+      [styles.anchorOriginTopLeft]:
+        anchorOrigin.horizontal === "left" && anchorOrigin.vertical === "top",
+      [styles.anchorOriginTopRight]:
+        anchorOrigin.horizontal === "right" && anchorOrigin.vertical === "top",
+      [styles.anchorOriginBottomLeft]:
+        anchorOrigin.horizontal === "left" &&
+        anchorOrigin.vertical === "bottom",
+      [styles.anchorOriginBottomRight]:
+        anchorOrigin.horizontal === "right" &&
+        anchorOrigin.vertical === "bottom",
     },
   );
 

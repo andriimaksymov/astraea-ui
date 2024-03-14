@@ -36,6 +36,12 @@ export type CardProps = {
   padding?: "none" | "small" | "medium" | "large";
 } & HTMLAttributes<HTMLDivElement>;
 
+/**
+ * Card component for.
+ * @param {CardProps} props The props for the Card component.
+ * @returns {JSX.Element} The Card component.
+ */
+
 const Card = forwardRef<HTMLDivElement, CardProps>(
   (
     {

@@ -122,31 +122,33 @@ function Combobox({
           onKeyDown: handleInputKeyDown,
         })}
       />
-      {isOpen && items.length > 0 && (
-        <div
-          data-testid="astraea-combobox-menu"
-          className={clsx(styles.suggestionMenu, {
-            [styles[`elevation${elevation}`]]: elevation && elevation > 0,
-            [styles.openSuggestionMenu]: isOpen && items.length > 0,
-          })}
-          {...getMenuProps()}
-        >
-          {limitedItems.map((item, index) => (
-            <div
-              key={item.key ?? index}
-              className={clsx(styles.suggestion, {
-                [styles.highlightedSuggestion]: highlightedIndex === index,
-              })}
-              {...getItemProps({
-                item,
-                index,
-              })}
-            >
-              {item.value}
-            </div>
-          ))}
-        </div>
-      )}
+      <div
+        data-testid="astraea-combobox-menu"
+        className={clsx(styles.suggestionMenu, {
+          [styles[`elevation${elevation}`]]: elevation && elevation > 0,
+          [styles.openSuggestionMenu]: isOpen && items.length > 0,
+        })}
+        {...getMenuProps()}
+      >
+        {isOpen && (
+          <>
+            {limitedItems.map((item, index) => (
+              <div
+                key={item.key ?? index}
+                className={clsx(styles.suggestion, {
+                  [styles.highlightedSuggestion]: highlightedIndex === index,
+                })}
+                {...getItemProps({
+                  item,
+                  index,
+                })}
+              >
+                {item.value}
+              </div>
+            ))}
+          </>
+        )}
+      </div>
     </div>
   );
 }

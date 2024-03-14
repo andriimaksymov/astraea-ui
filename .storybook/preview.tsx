@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "../src/main.css";
+import { Controls, Primary, Stories, Subtitle, Title } from "@storybook/blocks";
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +10,16 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Primary />
+          <Controls />
+          <Stories />
+        </>
+      ),
     },
   },
 };

@@ -1,11 +1,13 @@
 import { Meta } from "@storybook/react";
 
-import Checkbox, { CheckboxProps } from "../Checkbox";
 import { Stack } from "../../index";
+
+import Checkbox, { CheckboxProps } from "../Checkbox";
 
 export default {
   title: "Checkbox",
   component: Checkbox,
+  tags: ["autodocs"],
   argTypes: {
     label: {
       control: {
