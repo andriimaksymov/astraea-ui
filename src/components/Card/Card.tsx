@@ -1,7 +1,16 @@
-import { forwardRef, HTMLAttributes, ReactNode } from "react";
+import {
+  ComponentPropsWithRef,
+  ElementType,
+  forwardRef,
+  HTMLAttributes,
+  ReactNode,
+} from "react";
 import clsx from "clsx";
 
 import styles from "./Card.module.sass";
+
+export declare type PolymorphicRef<T extends ElementType> =
+  ComponentPropsWithRef<T>["ref"];
 
 export type CardElevation = 0 | 1 | 2 | 3 | 4 | 5;
 
@@ -37,48 +46,46 @@ export type CardProps = {
 } & HTMLAttributes<HTMLDivElement>;
 
 /**
- * Card component for.
+ * Card component.
  * @param {CardProps} props The props for the Card component.
+ * @param {PolymorphicRef<'div'>} ref The ref for the Card.
  * @returns {JSX.Element} The Card component.
  */
 
-const Card = forwardRef<HTMLDivElement, CardProps>(
-  (
+const CardBase = (
+  {
+    hasBorder,
+    borderColor,
+    className,
+    children,
+    padding = "medium",
+    elevation = 1,
+    ...rest
+  }: CardProps,
+  ref: PolymorphicRef<"div">,
+) => {
+  const classNames = clsx(
+    styles.root,
+    className,
+    elevation && [styles[`elevation${elevation}`]],
     {
-      hasBorder,
-      borderColor,
-      className,
-      children,
-      padding = "medium",
-      elevation = 1,
-      ...props
+      [styles.withBorder]: hasBorder || borderColor,
+      [styles[`padding${padding.charAt(0).toUpperCase()}${padding.slice(1)}`]]:
+        padding,
     },
-    ref,
-  ) => {
-    const classNames = clsx(
-      styles.root,
-      className,
-      elevation && [styles[`elevation${elevation}`]],
-      {
-        [styles.withBorder]: hasBorder || borderColor,
-        [styles[
-          `padding${padding.charAt(0).toUpperCase()}${padding.slice(1)}`
-        ]]: padding,
-      },
-    );
+  );
 
-    const combinedStyle = {
-      ...(borderColor && { borderColor }),
-    };
+  const combinedStyle = {
+    ...(borderColor && { borderColor }),
+  };
 
-    return (
-      <div ref={ref} className={classNames} style={combinedStyle} {...props}>
-        {children}
-      </div>
-    );
-  },
-);
+  return (
+    <div ref={ref} className={classNames} style={combinedStyle} {...rest}>
+      {children}
+    </div>
+  );
+};
 
-Card.displayName = "Card";
+const Card = forwardRef(CardBase) as typeof CardBase;
 
 export default Card;

@@ -12,14 +12,12 @@ export default {
   tags: ["autodocs"],
   argTypes: {
     anchorOrigin: {
-      control: {
-        type: "select",
-        options: {
-          "Top Right": { vertical: "top", horizontal: "right" },
-          "Top Left": { vertical: "top", horizontal: "left" },
-          "Bottom Right": { vertical: "bottom", horizontal: "right" },
-          "Bottom Left": { vertical: "bottom", horizontal: "left" },
-        },
+      options: ["Top Right", "Top Left", "Bottom Right", "Bottom Left"],
+      mapping: {
+        "Top Right": { vertical: "top", horizontal: "right" },
+        "Top Left": { vertical: "top", horizontal: "left" },
+        "Bottom Right": { vertical: "bottom", horizontal: "right" },
+        "Bottom Left": { vertical: "bottom", horizontal: "left" },
       },
     },
     badgeContent: {
@@ -27,6 +25,17 @@ export default {
     },
     className: {
       control: "text",
+    },
+    color: {
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "error",
+        "info",
+        "success",
+        "warning",
+      ],
     },
     invisible: {
       control: "boolean",

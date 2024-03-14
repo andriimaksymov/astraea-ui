@@ -1,6 +1,7 @@
 import { Meta } from "@storybook/react";
 
 import { Stack } from "../../index";
+
 import Card from "../Card";
 
 export default {
@@ -12,6 +13,9 @@ export default {
       type: "boolean",
       defaultValue: false,
     },
+    borderColor: {
+      type: "string",
+    },
     className: {
       control: {
         type: "text",
@@ -19,8 +23,6 @@ export default {
     },
   },
 } as Meta<typeof Card>;
-
-const Template: (args) => JSX.Element = (args) => <Card {...args} />;
 
 export const Basic = (args: typeof Card) => {
   return (
@@ -58,17 +60,22 @@ export const Elevation = (args: typeof Card) => {
   );
 };
 
-export const Bordered = Template.bind({});
-Bordered.args = {
-  children: "Card With Border",
-  elevation: 0,
-  hasBorder: true,
+export const WithBorder = (args: typeof Card) => {
+  return (
+    <Stack spacing={4} justify="center">
+      <Card {...args} elevation={0} hasBorder>
+        Card With Border
+      </Card>
+    </Stack>
+  );
 };
 
-export const BorderedColor = Template.bind({});
-BorderedColor.args = {
-  children: "Card With Border Color",
-  elevation: 0,
-  hasBorder: true,
-  borderColor: "blue",
+export const WithCustomBorderColor = (args: typeof Card) => {
+  return (
+    <Stack spacing={4} justify="center">
+      <Card {...args} elevation={0} borderColor="blue">
+        Card With Custom Border Color
+      </Card>
+    </Stack>
+  );
 };
