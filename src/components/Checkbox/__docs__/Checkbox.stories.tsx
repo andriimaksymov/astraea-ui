@@ -8,16 +8,17 @@ export default {
   title: "Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
-  argTypes: {
-    label: {
-      control: {
-        type: "text",
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Checkboxes allow the user to select one or more items from a set.",
       },
     },
   },
 } as Meta<typeof Checkbox>;
 
-export const Basic = (args: CheckboxProps) => (
+export const BasicCheckboxes = (args: CheckboxProps) => (
   <Stack justify="center" spacing={1}>
     <Checkbox {...args} defaultChecked />
     <Checkbox {...args} />
@@ -26,6 +27,9 @@ export const Basic = (args: CheckboxProps) => (
   </Stack>
 );
 
+/**
+ * You can provide a label to the Checkbox
+ */
 export const Label = (args: CheckboxProps) => (
   <Stack justify="center">
     <Stack spacing={1} direction="column">
@@ -35,6 +39,9 @@ export const Label = (args: CheckboxProps) => (
   </Stack>
 );
 
+/**
+ * You can change the placement of the label.
+ */
 export const LabelPlacement = (args: CheckboxProps) => (
   <Stack spacing={4} justify="center">
     <Checkbox label="Top" labelPlacement="top" {...args} />

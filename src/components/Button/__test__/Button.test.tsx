@@ -9,7 +9,7 @@ describe("Button component", () => {
     render(<Button>Button</Button>);
     const button = screen.getByRole("button");
 
-    expect(button).toBeDefined();
+    expect(button).toBeInTheDocument();
   });
 
   it("should render button as a link and check for href attribute", () => {
@@ -20,7 +20,7 @@ describe("Button component", () => {
     );
     const button = screen.getByText("Link Button");
 
-    expect(button).toBeDefined();
+    expect(button).toBeInTheDocument();
     expect(button.getAttribute("href")).not.toBeNull();
   });
 
@@ -28,7 +28,7 @@ describe("Button component", () => {
     render(<Button color="primary">Link Button</Button>);
     const button = screen.getByRole("button");
 
-    expect(button).toBeDefined();
+    expect(button).toBeInTheDocument();
     expect(button.className).toContain("primary");
   });
 
@@ -36,7 +36,7 @@ describe("Button component", () => {
     render(<Button disabled>Disabled Button</Button>);
     const button = screen.getByRole("button");
 
-    expect(button).toBeDefined();
+    expect(button).toBeInTheDocument();
     expect(button.className).toContain("disabled");
     expect(button.getAttribute("disabled")).not.toBeNull();
   });
@@ -47,8 +47,8 @@ describe("Button component", () => {
     const button = screen.getByRole("button");
     const svg = button.querySelector("svg");
 
-    expect(button).toBeDefined();
-    expect(svg).toBeDefined();
+    expect(button).toBeInTheDocument();
+    expect(svg).toBeInTheDocument();
     expect(button.firstElementChild.childNodes[0]).toBe(svg);
   });
 
@@ -58,8 +58,8 @@ describe("Button component", () => {
     const button = screen.getByRole("button");
     const svg = button.querySelector("svg");
 
-    expect(button).toBeDefined();
-    expect(svg).toBeDefined();
+    expect(button).toBeInTheDocument();
+    expect(svg).toBeInTheDocument();
     expect(button.lastElementChild.childNodes[0]).toBe(svg);
   });
 });

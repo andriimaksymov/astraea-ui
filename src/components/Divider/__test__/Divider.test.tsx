@@ -8,6 +8,6 @@ describe("Divider component", () => {
     render(<Divider />);
     const progress = screen.getByTestId("astraea-divider");
 
-    expect(progress).toBeDefined();
+    expect(progress).toBeInTheDocument();
   });
 });

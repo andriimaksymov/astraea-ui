@@ -5,6 +5,13 @@ import Stack, { StackProps } from "../Stack";
 export default {
   title: "Stack",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "Stack component for arranging and spacing its children.",
+      },
+    },
+  },
   component: Stack,
   argTypes: {
     grow: { type: "boolean" },

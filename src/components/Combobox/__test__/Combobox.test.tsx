@@ -21,7 +21,7 @@ describe("Combobox component", () => {
     render(<Combobox />);
     const combobox = screen.getByTestId("astraea-combobox");
 
-    expect(combobox).toBeDefined();
+    expect(combobox).toBeInTheDocument();
   });
 
   it("should render combobox with list of values", () => {
@@ -29,10 +29,10 @@ describe("Combobox component", () => {
     const combobox = screen.getByTestId("astraea-combobox");
     const input = screen.getByRole("combobox");
 
-    expect(combobox).toBeDefined();
+    expect(combobox).toBeInTheDocument();
     fireEvent.click(input);
     const menu = screen.getByTestId("astraea-combobox-menu");
-    expect(menu).toBeDefined();
+    expect(menu).toBeInTheDocument();
     expect(menu.children.length).toBe(
       animals.length < DEFAULT_COMBOBOX_ITEMS_LENGTH
         ? animals.length

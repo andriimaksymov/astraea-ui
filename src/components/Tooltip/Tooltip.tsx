@@ -111,7 +111,7 @@ const Tooltip = ({
   return (
     <div
       ref={ref}
-      role="tooltip"
+      data-testid="tooltipWrapper"
       className={styles.wrapper}
       {...(action === "hover"
         ? {
@@ -125,6 +125,7 @@ const Tooltip = ({
       {children}
       {content && (active || open) && (
         <div
+          role="tooltip"
           style={{ width }}
           className={clsx(
             styles.root,

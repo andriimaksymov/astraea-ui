@@ -8,6 +8,13 @@ export default {
   title: "Card",
   component: Card,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "Cards contain content about a single subject.",
+      },
+    },
+  },
   argTypes: {
     hasBorder: {
       type: "boolean",
@@ -24,6 +31,9 @@ export default {
   },
 } as Meta<typeof Card>;
 
+/**
+ * Basic card example.
+ */
 export const Basic = (args: typeof Card) => {
   return (
     <Card {...args}>
@@ -41,6 +51,10 @@ export const Basic = (args: typeof Card) => {
     </Card>
   );
 };
+
+/**
+ * For diverse levels of card shadows use the <b>elevation</b> prop.
+ */
 export const Elevation = (args: typeof Card) => {
   return (
     <Stack spacing={4} justify="center">
@@ -60,6 +74,9 @@ export const Elevation = (args: typeof Card) => {
   );
 };
 
+/**
+ * For card with border use the <b>hasBorder</b> prop.
+ */
 export const WithBorder = (args: typeof Card) => {
   return (
     <Stack spacing={4} justify="center">
@@ -70,6 +87,9 @@ export const WithBorder = (args: typeof Card) => {
   );
 };
 
+/**
+ * Card with custom border color, use the <b>borderColor</b> prop.
+ */
 export const WithCustomBorderColor = (args: typeof Card) => {
   return (
     <Stack spacing={4} justify="center">

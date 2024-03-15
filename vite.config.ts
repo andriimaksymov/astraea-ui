@@ -2,6 +2,8 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
+import removeAttr from "remove-attr";
+import react from "@vitejs/plugin-react";
 import { peerDependencies } from "./package.json";
 
 export default defineConfig({
@@ -24,6 +26,11 @@ export default defineConfig({
     setupFiles: "./setupTests.ts",
   },
   plugins: [
+    react(),
+    removeAttr({
+      extensions: ["react"],
+      attributes: ["data-testid"],
+    }),
     libInjectCss(),
     dts(), // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
   ],

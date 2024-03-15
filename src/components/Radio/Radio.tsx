@@ -1,7 +1,15 @@
 import clsx from "clsx";
-import { ComponentPropsWithoutRef, forwardRef, ReactNode } from "react";
+import {
+  ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
+  ElementType,
+  forwardRef,
+  ReactNode,
+} from "react";
 
 import styles from "./Radio.module.sass";
+
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 export type RadioProps = {
   /**
@@ -37,35 +45,35 @@ const DefaultCheckedIcon = ({ ...props }) => (
  * @returns {JSX.Element} - The rendered Radio component.
  */
 
-const Radio = forwardRef<HTMLInputElement, RadioProps>(
-  ({ className, label, labelPlacement = "end", ...props }, ref) => {
-    const classNames = clsx(
-      styles.root,
-      className,
-      props.disabled && [styles.disabled],
-      {
-        [styles.placementStart]: labelPlacement === "start",
-        [styles.placementEnd]: labelPlacement === "end",
-      },
-    );
+const RadioBase = (
+  { className, label, labelPlacement = "end", ...rest }: RadioProps,
+  ref: PolymorphicRef<"input">,
+) => {
+  const classNames = clsx(
+    styles.root,
+    className,
+    rest.disabled && [styles.disabled],
+    {
+      [styles.placementStart]: labelPlacement === "start",
+      [styles.placementEnd]: labelPlacement === "end",
+    },
+  );
 
-    return (
-      <label className={classNames}>
-        <input ref={ref} type="radio" className={styles.input} {...props} />
-        <div className={styles.iconWrap}>
-          {(props.checked || props.defaultChecked) && (
-            <DefaultCheckedIcon
-              className={clsx(styles.icon, styles.checkedIcon)}
-            />
-          )}
-          <DefaultIcon className={styles.icon} />
-        </div>
-        <span className={styles.label}>{label}</span>
-      </label>
-    );
-  },
-);
+  return (
+    <label className={classNames}>
+      <input ref={ref} type="radio" className={styles.input} {...rest} />
+      <div className={styles.iconWrap}>
+        {(rest.checked || rest.defaultChecked) && (
+          <DefaultCheckedIcon
+            className={clsx(styles.icon, styles.checkedIcon)}
+          />
+        )}
+        <DefaultIcon className={styles.icon} />
+      </div>
+      <span className={styles.label}>{label}</span>
+    </label>
+  );
+};
 
-Radio.displayName = "Radio";
-
+const Radio = forwardRef(RadioBase);
 export default Radio;

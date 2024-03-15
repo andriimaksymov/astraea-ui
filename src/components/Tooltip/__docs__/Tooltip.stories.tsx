@@ -16,6 +16,14 @@ import Tooltip, { TooltipProps } from "../Tooltip";
 export default {
   title: "Tooltip",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A component that displays a tooltip when triggered by user action.",
+      },
+    },
+  },
   component: Tooltip,
 } as Meta<typeof Tooltip>;
 

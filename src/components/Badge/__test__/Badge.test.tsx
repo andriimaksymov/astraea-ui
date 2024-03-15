@@ -11,8 +11,8 @@ describe("Badge component", () => {
       </Badge>,
     );
 
-    expect(getByText("Child Component")).toBeDefined();
-    expect(getByText("5")).toBeDefined();
+    expect(getByText("Child Component")).toBeInTheDocument();
+    expect(getByText("5")).toBeInTheDocument();
   });
 
   it("should have custom className", () => {

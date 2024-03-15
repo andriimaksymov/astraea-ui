@@ -8,6 +8,14 @@ import IconButton from "../IconButton";
 export default {
   title: "IconButton",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Icon Buttons that include SVG icon only and allow users to take actions, make choices, with a single tap.",
+      },
+    },
+  },
   component: IconButton,
 } as Meta<typeof IconButton>;
 

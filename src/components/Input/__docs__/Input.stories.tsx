@@ -8,6 +8,13 @@ import Input, { InputProps } from "../Input";
 export default {
   title: "Input",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "Input let users enter and edit text.",
+      },
+    },
+  },
   component: Input,
 } as Meta<typeof Input>;
 

@@ -1,6 +1,13 @@
 import type { Preview } from "@storybook/react";
 import "../src/main.css";
-import { Controls, Primary, Stories, Subtitle, Title } from "@storybook/blocks";
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from "@storybook/blocks";
 
 const preview: Preview = {
   parameters: {
@@ -15,6 +22,7 @@ const preview: Preview = {
       page: () => (
         <>
           <Title />
+          <Description />
           <Primary />
           <Controls />
           <Stories />

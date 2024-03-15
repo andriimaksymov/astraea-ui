@@ -8,7 +8,7 @@ describe("Card component", () => {
     render(<Card>Hello, World!</Card>);
     const card: HTMLDivElement = screen.getByText("Hello, World!");
 
-    expect(card).toBeDefined();
+    expect(card).toBeInTheDocument();
   });
 
   it("should render card with custom className", () => {

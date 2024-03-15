@@ -6,6 +6,13 @@ export default {
   title: "Radio",
   tags: ["autodocs"],
   component: Radio,
+  parameters: {
+    docs: {
+      description: {
+        component: "The Radio allows the user to select one option from a set.",
+      },
+    },
+  },
   argTypes: {
     label: {
       control: {

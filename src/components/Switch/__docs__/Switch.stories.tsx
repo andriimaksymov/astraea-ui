@@ -8,6 +8,13 @@ export default {
   title: "Switch",
   tags: ["autodocs"],
   component: Switch,
+  parameters: {
+    docs: {
+      description: {
+        component: "Switch component to implement toggle switches.",
+      },
+    },
+  },
 } as Meta<typeof Switch>;
 
 export const Basic = (args: SwitchProps) => (

@@ -9,6 +9,14 @@ export default {
   title: "Button",
   component: Button,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Buttons allow users to take actions, and make choices, with a single tap.",
+      },
+    },
+  },
   argTypes: {
     size: {
       control: "select",
@@ -38,7 +46,10 @@ export default {
   },
 } as Meta<typeof Button>;
 
-export const Default = (args: typeof Button) => {
+/**
+ * The Button comes with three variants: text, contained (default), and outlined.
+ */
+export const BasicButton = (args: typeof Button) => {
   return (
     <Stack spacing={3} justify="center">
       <Button variant="text" {...args}>
@@ -54,7 +65,7 @@ export const Default = (args: typeof Button) => {
   );
 };
 
-export const Text = (args: typeof Button) => {
+export const TextButton = (args: typeof Button) => {
   return (
     <Stack spacing={3} align="center" justify="center">
       <Button variant="text" {...args}>
@@ -67,7 +78,7 @@ export const Text = (args: typeof Button) => {
   );
 };
 
-export const Contained = (args: typeof Button) => {
+export const ContainedButton = (args: typeof Button) => {
   return (
     <Stack spacing={3} align="center" justify="center">
       <Button variant="contained" {...args}>
@@ -80,7 +91,7 @@ export const Contained = (args: typeof Button) => {
   );
 };
 
-export const Outlined = (args: typeof Button) => {
+export const OutlinedButton = (args: typeof Button) => {
   return (
     <Stack spacing={3} align="center" justify="center">
       <Button variant="outlined" {...args}>
@@ -93,6 +104,9 @@ export const Outlined = (args: typeof Button) => {
   );
 };
 
+/**
+ * For larger or smaller buttons, use the size prop.
+ */
 export const Size = (args: typeof Button) => {
   return (
     <Stack spacing={3} direction="column" justify="center">
@@ -136,14 +150,14 @@ export const Size = (args: typeof Button) => {
 export const Color = (args: typeof Button) => {
   return (
     <Stack spacing={3} justify="center">
-      <Button variant="contained" color="inherit" {...args}>
-        Default
-      </Button>
-      <Button variant="contained" color="primary" {...args}>
+      <Button variant="text" color="primary" {...args}>
         Primary
       </Button>
       <Button variant="contained" color="secondary" {...args}>
         Secondary
+      </Button>
+      <Button variant="outlined" color="inherit" {...args}>
+        Inherit
       </Button>
     </Stack>
   );

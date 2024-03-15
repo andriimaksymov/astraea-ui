@@ -10,6 +10,14 @@ export default {
   title: "Badge",
   component: Badge,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Badge generates a small badge to the top-right of its child element.",
+      },
+    },
+  },
   argTypes: {
     anchorOrigin: {
       options: ["Top Right", "Top Left", "Bottom Right", "Bottom Left"],
@@ -49,14 +57,31 @@ export default {
   },
 } as Meta<typeof Badge>;
 
-export const Basic = (args: BadgeProps) => (
+/**
+ * Examples of badges containing text. The badge is applied to its children.
+ */
+export const BasicBadge = (args: BadgeProps) => (
   <Stack justify="center" spacing={2} style={{ padding: "1rem" }}>
     <Badge badgeContent={5} {...args}>
-      <SvgIcon color="muted" icon={MailIcon} />
+      <SvgIcon color="primary" icon={MailIcon} />
     </Badge>
   </Stack>
 );
 
+/**
+ * The dot prop changes a badge into a small dot. This can be used as a notification that something has changed without giving a count.
+ */
+export const DotBadge = (args: BadgeProps) => (
+  <Stack justify="center" spacing={2} style={{ padding: "1rem" }}>
+    <Badge badgeContent={5} {...args}>
+      <SvgIcon color="primary" icon={MailIcon} />
+    </Badge>
+  </Stack>
+);
+
+/**
+ * Use color prop to apply theme palette to component.
+ */
 export const Color = (args: BadgeProps) => (
   <Stack justify="center" spacing={4}>
     <Badge badgeContent={5} color="default" {...args}>
@@ -83,6 +108,9 @@ export const Color = (args: BadgeProps) => (
   </Stack>
 );
 
+/**
+ * The visibility of badges can be controlled using the invisible prop.
+ */
 export const Visibility = (args: BadgeProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(args.invisible || true);
 
@@ -113,6 +141,9 @@ export const Visibility = (args: BadgeProps) => {
   );
 };
 
+/**
+ * You can use the anchorOrigin prop to move the badge to any corner of the wrapped element.
+ */
 export const Alignment = (args: BadgeProps) => {
   const [vertical, setVertical] = useState<BadgeOrigin["vertical"]>(
     args.anchorOrigin?.vertical || "top",

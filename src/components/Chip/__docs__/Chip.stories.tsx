@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/react";
 
-import PlusIcon from "../../../assets/icons/PlusIcon";
+import TrashIcon from "../../../assets/icons/TrashIcon";
 import { Stack } from "../../index";
 
 import Chip from "../Chip";
@@ -9,25 +9,35 @@ export default {
   title: "Chip",
   component: Chip,
   tags: ["autodocs"],
-  argTypes: {
-    onDelete: {
-      defaultValue: null,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Chips are compact elements that represent an input, attribute, or action.",
+      },
     },
-    onClick: {
-      defaultValue: null,
-    },
+  },
+  args: {
+    onDelete: null,
   },
 } as Meta<typeof Chip>;
 
-const Template = (args) => <Chip {...args} />;
+/**
+ * Chips are compact elements that represent an input, attribute, or action.
+ */
+export const Basic = ({ ...args }) => (
+  <Stack spacing={2} align="center" justify="center">
+    <Chip variant="contained" {...args}>
+      Basic Chip
+    </Chip>
+  </Stack>
+);
 
-export const Basic = Template.bind({});
-Basic.args = {
-  children: "Basic Chip",
-};
-
+/**
+ * The <b>Chip</b> component supports outlined and filled styling, use <b>variant</b> prop.
+ */
 export const Variant = (args: typeof Chip) => (
-  <Stack spacing={2}>
+  <Stack spacing={2} align="center" justify="center">
     <Chip variant="contained" {...args}>
       Contained
     </Chip>
@@ -37,8 +47,11 @@ export const Variant = (args: typeof Chip) => (
   </Stack>
 );
 
+/**
+ * You can use the <b>color</b> prop to define a color from theme palette.
+ */
 export const Color = (args: typeof Chip) => (
-  <Stack spacing={2}>
+  <Stack spacing={2} align="center" justify="center">
     <Chip color="primary" variant="contained" {...args}>
       Primary
     </Chip>
@@ -48,29 +61,69 @@ export const Color = (args: typeof Chip) => (
   </Stack>
 );
 
-export const Round = Template.bind({});
-Round.args = {
-  children: "Round",
-  round: true,
-};
+/**
+ * You can use the <b>round</b> prop to define a rounded style.
+ */
+export const Rounded = (args: typeof Chip) => (
+  <Stack spacing={2} align="center" justify="center">
+    <Chip round color="primary" {...args}>
+      Primary
+    </Chip>
+    <Chip round color="secondary" {...args}>
+      Secondary
+    </Chip>
+    <Chip round color="primary" variant="outlined" {...args}>
+      Primary
+    </Chip>
+    <Chip round color="secondary" variant="outlined" {...args}>
+      Secondary
+    </Chip>
+  </Stack>
+);
 
-export const Clickable = Template.bind({});
-Clickable.args = {
-  children: "Clickable",
-  onClick: () => alert("Message"),
-};
+export const Clickable = (args: typeof Chip) => (
+  <Stack spacing={2} align="center" justify="center">
+    <Chip
+      color="primary"
+      {...args}
+      onClick={() => alert("You've just clicked on the chip element")}
+    >
+      Clickable
+    </Chip>
+  </Stack>
+);
 
-export const DeleteButton = Template.bind({});
-DeleteButton.args = {
-  children: "With Delete Button",
-  onClick: () => alert("Click"),
-  onDelete: () => alert("Delete"),
-};
+export const ClickableAndDeletable = (args: typeof Chip) => (
+  <Stack spacing={2} align="center" justify="center">
+    <Chip
+      color="primary"
+      {...args}
+      onClick={() => alert("You've just clicked on the chip element")}
+      onDelete={() =>
+        alert(
+          "You've just clicked on the delete button inside the chip element",
+        )
+      }
+    >
+      Clickable And Deletable
+    </Chip>
+  </Stack>
+);
 
-export const CustomDeleteIcon = Template.bind({});
-CustomDeleteIcon.args = {
-  children: "With Delete Button",
-  deleteIcon: <PlusIcon />,
-  onClick: () => alert("Click"),
-  onDelete: () => alert("Delete"),
-};
+export const WithCustomDeleteIcon = (args: typeof Chip) => (
+  <Stack spacing={2} align="center" justify="center">
+    <Chip
+      color="primary"
+      deleteIcon={TrashIcon}
+      {...args}
+      onClick={() => alert("You've just clicked on the chip element")}
+      onDelete={() =>
+        alert(
+          "You've just clicked on the delete button inside the chip element",
+        )
+      }
+    >
+      Custom delete icon
+    </Chip>
+  </Stack>
+);

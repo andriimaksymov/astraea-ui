@@ -8,14 +8,14 @@ describe("CircularProgress component", () => {
     render(<CircularProgress />);
     const progress = screen.getByTestId("CircularProgress");
 
-    expect(progress).toBeDefined();
+    expect(progress).toBeInTheDocument();
   });
 
   it("should render circular progress component with custom size value", () => {
     render(<CircularProgress size={80} />);
     const progress = screen.getByTestId("CircularProgress");
 
-    expect(progress).toBeDefined();
+    expect(progress).toBeInTheDocument();
     expect(progress.style.width).toBe("80px");
     expect(progress.style.height).toBe("80px");
   });
@@ -24,7 +24,7 @@ describe("CircularProgress component", () => {
     render(<CircularProgress className="custom-class" />);
     const progress = screen.getByTestId("CircularProgress");
 
-    expect(progress).toBeDefined();
+    expect(progress).toBeInTheDocument();
     expect(progress.className).toContain("custom-class");
   });
 });

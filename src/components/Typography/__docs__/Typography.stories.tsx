@@ -7,6 +7,14 @@ export default {
   title: "Typography",
   tags: ["autodocs"],
   component: Typography,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A component that displays a tooltip when triggered by user action.",
+      },
+    },
+  },
 } as Meta<typeof Typography>;
 
 const Template = (args) => <Typography {...args} />;

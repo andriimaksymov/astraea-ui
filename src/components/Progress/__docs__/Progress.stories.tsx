@@ -7,6 +7,13 @@ import Progress, { ProgressProps } from "../Progress";
 export default {
   title: "Progress",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "Progress indicators to display the length of a process.",
+      },
+    },
+  },
   component: Progress,
 } as Meta<typeof Progress>;
 

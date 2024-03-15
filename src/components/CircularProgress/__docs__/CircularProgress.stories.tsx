@@ -8,6 +8,14 @@ export default {
   title: "CircularProgress",
   tags: ["autodocs"],
   component: CircularProgress,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Progress indicators commonly known as spinners, express an unspecified wait time.",
+      },
+    },
+  },
 } as Meta<typeof CircularProgress>;
 
 export const Basic = (args: CircularProgressProps) => (

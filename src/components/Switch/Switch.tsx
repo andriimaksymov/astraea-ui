@@ -1,5 +1,11 @@
 import clsx from "clsx";
-import { ChangeEvent, forwardRef, ReactNode } from "react";
+import {
+  ChangeEvent,
+  ComponentPropsWithRef,
+  ElementType,
+  forwardRef,
+  ReactNode,
+} from "react";
 
 import styles from "./Switch.module.sass";
 
@@ -35,7 +41,7 @@ export type SwitchProps = {
    * The size of the component.
    * @default 'medium;
    */
-  size?: "small" | "medium" | "large";
+  size?: SwitchSize;
   /**
    * Callback fired when the state is changed.
    *
@@ -46,6 +52,9 @@ export type SwitchProps = {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
+declare type PolymorphicRef<T extends ElementType> =
+  ComponentPropsWithRef<T>["ref"];
+
 /**
  * Switch component to implement toggle switches.
  * @param {SwitchProps} props The props for the Chip component.
@@ -53,54 +62,49 @@ export type SwitchProps = {
  * @returns {JSX.Element} The Chip component.
  */
 
-const Switch = forwardRef<HTMLDivElement, SwitchProps>(
-  (
-    {
-      checked,
-      className,
-      disabled,
-      label,
-      labelPlacement = "start",
-      size,
-      onChange,
-      ...props
-    },
-    ref,
-  ) => {
-    const labelPlacementClassName =
-      "labelPlacement" +
-      labelPlacement.charAt(0).toUpperCase() +
-      labelPlacement.slice(1);
-    const classNames = clsx(
-      styles.root,
-      size && styles[size],
-      disabled && styles.disabled,
-      className,
-    );
+const SwitchBase = (
+  {
+    checked,
+    className,
+    disabled,
+    label,
+    labelPlacement = "start",
+    size,
+    onChange,
+    ...rest
+  }: SwitchProps,
+  ref: PolymorphicRef<"div">,
+) => {
+  const labelPlacementClassName =
+    "labelPlacement" +
+    labelPlacement.charAt(0).toUpperCase() +
+    labelPlacement.slice(1);
+  const classNames = clsx(
+    styles.root,
+    size && styles[size],
+    disabled && styles.disabled,
+    className,
+  );
 
-    return (
-      <div className={classNames} ref={ref} {...props}>
-        <label
-          className={clsx(
-            styles.label,
-            label && styles[labelPlacementClassName],
-          )}
-        >
-          <input
-            type="checkbox"
-            className={styles.input}
-            checked={checked}
-            onChange={onChange}
-            disabled={disabled}
-          />
-          <span className={styles.switch} />
-          <span className={styles.labelText}>{label}</span>
-        </label>
-      </div>
-    );
-  },
-);
+  return (
+    <div className={classNames} ref={ref} {...rest}>
+      <label
+        className={clsx(styles.label, label && styles[labelPlacementClassName])}
+      >
+        <input
+          type="checkbox"
+          className={styles.input}
+          checked={checked}
+          onChange={onChange}
+          disabled={disabled}
+        />
+        <span className={styles.switch} />
+        <span className={styles.labelText}>{label}</span>
+      </label>
+    </div>
+  );
+};
 
-Switch.displayName = "Switch";
+const Switch = forwardRef(SwitchBase) as typeof SwitchBase;
 
 export default Switch;

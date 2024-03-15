@@ -8,6 +8,13 @@ import Menu, { MenuOrigin, MenuPosition, MenuProps } from "../Menu";
 export default {
   title: "Menu",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "Menus display a list of choices on temporary surfaces.",
+      },
+    },
+  },
   component: Menu,
 } as Meta<typeof Menu>;
 

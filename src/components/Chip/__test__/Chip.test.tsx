@@ -8,6 +8,6 @@ describe("Chip component", () => {
     render(<Chip>Default chip</Chip>);
     const checkbox = screen.getByText("Default chip");
 
-    expect(checkbox).toBeDefined();
+    expect(checkbox).toBeInTheDocument();
   });
 });

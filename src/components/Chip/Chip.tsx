@@ -1,9 +1,18 @@
 import clsx from "clsx";
-import { ElementType, forwardRef, ReactNode, UIEvent } from "react";
+import {
+  ComponentPropsWithRef,
+  ElementType,
+  forwardRef,
+  ReactNode,
+  UIEvent,
+} from "react";
 
 import { IconButton } from "../IconButton";
 
 import styles from "./Chip.module.sass";
+
+declare type PolymorphicRef<T extends ElementType> =
+  ComponentPropsWithRef<T>["ref"];
 
 export type ChipProps = {
   /**
@@ -62,60 +71,58 @@ const CloseIcon = ({ ...props }) => (
  * @returns {JSX.Element} The Chip component.
  */
 
-const Chip = forwardRef<HTMLDivElement, ChipProps>(
-  (
+const ChipBase = (
+  {
+    className,
+    color = "default",
+    deleteIcon,
+    disabled,
+    round,
+    variant = "contained",
+    children,
+    onDelete,
+    onClick,
+    ...rest
+  }: ChipProps,
+  ref: PolymorphicRef<"div">,
+) => {
+  const classNames = clsx(
+    styles.root,
+    className,
+    color && styles[color],
+    round && styles.round,
     {
-      className,
-      color = "default",
-      deleteIcon,
-      disabled,
-      round,
-      variant = "contained",
-      children,
-      onDelete,
-      onClick,
-      ...props
+      [styles.disabled]: disabled,
+      [styles[variant]]: variant,
+      [styles.clickable]: onClick,
     },
-    ref,
-  ) => {
-    const classNames = clsx(
-      styles.root,
-      className,
-      color && styles[color],
-      round && styles.round,
-      {
-        [styles.disabled]: disabled,
-        [styles[variant]]: variant,
-        [styles.clickable]: onClick,
-      },
-    );
+  );
 
-    const handleDelete = (e: UIEvent<HTMLSpanElement>) => {
-      e.stopPropagation();
-      onDelete?.();
-    };
+  const handleDelete = (e: UIEvent<HTMLSpanElement>) => {
+    e.stopPropagation();
+    onDelete?.();
+  };
 
-    return (
-      <div
-        ref={ref}
-        className={classNames}
-        {...(onClick && { onClick })}
-        {...props}
-      >
-        <div className={styles.inner}>{children}</div>
-        {onDelete && (
-          <IconButton
-            component="span"
-            className={styles.button}
-            icon={deleteIcon ?? CloseIcon}
-            onClick={handleDelete}
-          />
-        )}
-      </div>
-    );
-  },
-);
+  return (
+    <div
+      ref={ref}
+      className={classNames}
+      {...(onClick && { onClick })}
+      {...rest}
+    >
+      <div className={styles.inner}>{children}</div>
+      {onDelete && (
+        <IconButton
+          component="span"
+          className={styles.button}
+          icon={deleteIcon ?? CloseIcon}
+          onClick={handleDelete}
+        />
+      )}
+    </div>
+  );
+};
 
-Chip.displayName = "Chip";
+const Chip = forwardRef(ChipBase) as typeof ChipBase;
 
 export default Chip;

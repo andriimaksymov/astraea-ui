@@ -135,6 +135,14 @@ const top100Films = [
 export default {
   title: "Combobox",
   component: Combobox,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "The combobox is a normal text input enhanced by a panel of suggested options.",
+      },
+    },
+  },
   tags: ["autodocs"],
   argTypes: {
     items: {

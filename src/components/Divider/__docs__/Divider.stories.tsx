@@ -7,6 +7,14 @@ import Divider, { DividerProps } from "../Divider";
 export default {
   title: "Divider",
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "The Divider component provides a thin, unobtrusive line for grouping elements to reinforce visual hierarchy.",
+      },
+    },
+  },
   component: Divider,
 } as Meta<typeof Divider>;
 
