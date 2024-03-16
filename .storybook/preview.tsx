@@ -5,7 +5,6 @@ import {
   Description,
   Primary,
   Stories,
-  Subtitle,
   Title,
 } from "@storybook/blocks";
 

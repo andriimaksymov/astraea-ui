@@ -13,7 +13,7 @@ export default {
     docs: {
       description: {
         component:
-          "Buttons allow users to take actions, and make choices, with a single tap.",
+          "The Button component is a customizable and versatile UI element used for triggering actions or events within a user interface. It provides a consistent way to interact with users and perform actions such as submitting forms, navigating between pages, or triggering specific functions.",
       },
     },
   },

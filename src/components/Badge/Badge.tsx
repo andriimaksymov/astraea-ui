@@ -96,10 +96,10 @@ const Badge = ({
 
   return (
     <div className={classNames} {...props}>
-      {children}
       <span className={anchorClassNames}>
         {variant !== "dot" && badgeContent}
       </span>
+      {children}
     </div>
   );
 };

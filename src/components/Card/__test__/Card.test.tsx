@@ -4,31 +4,23 @@ import { render, screen } from "@testing-library/react";
 import Card from "../Card";
 
 describe("Card component", () => {
-  it("should render card correctly", () => {
+  it("should render the card with default props", () => {
     render(<Card>Hello, World!</Card>);
-    const card: HTMLDivElement = screen.getByText("Hello, World!");
-
-    expect(card).toBeInTheDocument();
+    expect(screen.getByText("Hello, World!")).toBeInTheDocument();
   });
 
-  it("should render card with custom className", () => {
+  it("should render the card with custom class", () => {
     render(<Card className="custom-class">Hello, World!</Card>);
-    const card = screen.getByText("Hello, World!");
-
-    expect(card.className).toContain("custom-class");
+    expect(screen.getByText("Hello, World!")).toHaveClass("custom-class");
   });
 
-  it("should render card with elevation level 1", () => {
-    render(<Card elevation={1}>Hello, World!</Card>);
-    const card = screen.getByText("Hello, World!");
-
-    expect(card.className).toContain("elevation1");
+  it("should render the card with specified level", () => {
+    render(<Card elevation={2}>Hello, World!</Card>);
+    expect(screen.getByText("Hello, World!")).toHaveClass(/elevation2/);
   });
 
-  it("should render card with small padding", () => {
+  it("should render the card with specified padding", () => {
     render(<Card padding="small">Hello, World!</Card>);
-    const card = screen.getByText("Hello, World!");
-
-    expect(card.className).toContain("paddingSmall");
+    expect(screen.getByText("Hello, World!")).toHaveClass(/paddingSmall/);
   });
 });

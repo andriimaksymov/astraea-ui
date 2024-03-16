@@ -14,7 +14,7 @@ export default {
     docs: {
       description: {
         component:
-          "Badge generates a small badge to the top-right of its child element.",
+          "The badge component is a small visual indicator used to convey specific information or status within an interface. It is commonly used to highlight new items, notifications, or other important updates to users.",
       },
     },
   },
@@ -69,20 +69,20 @@ export const BasicBadge = (args: BadgeProps) => (
 );
 
 /**
- * The dot prop changes a badge into a small dot. This can be used as a notification that something has changed without giving a count.
+ * The <code>dot</code> prop changes a badge into a small dot. This can be used as a notification that something has changed without giving a count.
  */
 export const DotBadge = (args: BadgeProps) => (
   <Stack justify="center" spacing={2} style={{ padding: "1rem" }}>
-    <Badge badgeContent={5} {...args}>
-      <SvgIcon color="primary" icon={MailIcon} />
+    <Badge color="primary" variant="dot" {...args}>
+      <SvgIcon icon={MailIcon} />
     </Badge>
   </Stack>
 );
 
 /**
- * Use color prop to apply theme palette to component.
+ * Use <code>color</code> prop to apply theme palette to component.
  */
-export const Color = (args: BadgeProps) => (
+export const BadgeColor = (args: BadgeProps) => (
   <Stack justify="center" spacing={4}>
     <Badge badgeContent={5} color="default" {...args}>
       <SvgIcon color="muted" icon={MailIcon} />
@@ -109,9 +109,9 @@ export const Color = (args: BadgeProps) => (
 );
 
 /**
- * The visibility of badges can be controlled using the invisible prop.
+ * The visibility of badges can be controlled using the <code>invisible</code> prop.
  */
-export const Visibility = (args: BadgeProps) => {
+export const BadgeVisibility = (args: BadgeProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(args.invisible || true);
 
   return (
@@ -142,9 +142,9 @@ export const Visibility = (args: BadgeProps) => {
 };
 
 /**
- * You can use the anchorOrigin prop to move the badge to any corner of the wrapped element.
+ * You can use the <code>anchorOrigin</code> prop to move the badge to any corner of the wrapped element.
  */
-export const Alignment = (args: BadgeProps) => {
+export const BadgeAlignment = (args: BadgeProps) => {
   const [vertical, setVertical] = useState<BadgeOrigin["vertical"]>(
     args.anchorOrigin?.vertical || "top",
   );
