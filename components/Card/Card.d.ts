@@ -1,4 +1,5 @@
-import { HTMLAttributes, ReactNode } from '../../../node_modules/react';
+import { ComponentPropsWithRef, ElementType, HTMLAttributes, ReactNode } from '../../../node_modules/react';
+declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type CardElevation = 0 | 1 | 2 | 3 | 4 | 5;
 export type CardProps = {
     /**
@@ -30,34 +31,5 @@ export type CardProps = {
      */
     padding?: "none" | "small" | "medium" | "large";
 } & HTMLAttributes<HTMLDivElement>;
-declare const Card: import('../../../node_modules/react').ForwardRefExoticComponent<{
-    /**
-     * Border color of the card.
-     */
-    borderColor?: string | undefined;
-    /**
-     * Override or extend the styles applied to the component.
-     */
-    className?: string | undefined;
-    /**
-     * The content render inside the card.
-     */
-    children?: ReactNode;
-    /**
-     * Shadow depth, corresponds to `dp` in the spec.
-     * It accepts values between 0 and 5 inclusive.
-     * @default 1
-     */
-    elevation?: CardElevation | undefined;
-    /**
-     * If 'true' the card has 1px border.
-     * @default false
-     */
-    hasBorder?: boolean | undefined;
-    /**
-     * Padding size for the card.
-     * @default "medium"
-     */
-    padding?: "small" | "medium" | "large" | "none" | undefined;
-} & HTMLAttributes<HTMLDivElement> & import('../../../node_modules/react').RefAttributes<HTMLDivElement>>;
+declare const Card: ({ hasBorder, borderColor, className, children, padding, elevation, ...rest }: CardProps, ref: PolymorphicRef<"div">) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Card;

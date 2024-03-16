@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from '../../../node_modules/react';
+import { ChangeEvent, ComponentPropsWithRef, ElementType, ReactNode } from '../../../node_modules/react';
 export type SwitchSize = "small" | "medium" | "large";
 export type SwitchLabelPlacement = "top" | "start" | "bottom" | "end";
 export type SwitchProps = {
@@ -29,7 +29,7 @@ export type SwitchProps = {
      * The size of the component.
      * @default 'medium;
      */
-    size?: "small" | "medium" | "large";
+    size?: SwitchSize;
     /**
      * Callback fired when the state is changed.
      *
@@ -39,11 +39,6 @@ export type SwitchProps = {
      */
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
-/**
- * Switch component to implement toggle switches.
- * @param {SwitchProps} props The props for the Chip component.
- * @param {React.Ref<HTMLDivElement>} ref The ref for the Chip.
- * @returns {JSX.Element} The Chip component.
- */
-declare const Switch: import('../../../node_modules/react').ForwardRefExoticComponent<SwitchProps & import('../../../node_modules/react').RefAttributes<HTMLDivElement>>;
+declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
+declare const Switch: ({ checked, className, disabled, label, labelPlacement, size, onChange, ...rest }: SwitchProps, ref: PolymorphicRef<"div">) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Switch;

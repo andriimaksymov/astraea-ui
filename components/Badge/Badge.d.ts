@@ -1,8 +1,9 @@
 import { ReactNode } from '../../../node_modules/react';
-export interface BadgeOrigin {
+export type BadgeOrigin = {
     vertical: "top" | "bottom";
     horizontal: "left" | "right";
-}
+};
+export type BadgeColor = "default" | "primary" | "secondary" | "error" | "info" | "success" | "warning";
 export type BadgeProps = {
     /**
      * The anchor of the badge.
@@ -11,7 +12,10 @@ export type BadgeProps = {
      *   horizontal: 'right',
      * }
      */
-    anchorOrigin?: BadgeOrigin;
+    anchorOrigin?: {
+        vertical: "top" | "bottom";
+        horizontal: "left" | "right";
+    };
     /**
      * The content to be displayed within the badge.
      */
@@ -28,7 +32,7 @@ export type BadgeProps = {
      * The color of component.
      * @default 'default'
      */
-    color?: "default" | "primary" | "secondary" | "error" | "info" | "success" | "warning";
+    color?: BadgeColor;
     /**
      * The state of badge visibility.
      * If 'true' the badge is invisible.

@@ -14,11 +14,6 @@ export type RadioProps = {
      */
     labelPlacement?: "start" | "end";
 } & ComponentPropsWithoutRef<"input">;
-/**
- * Radio component for selecting a single option from a list.
- * @param {RadioProps} props - The props for the Radio component.
- * @returns {JSX.Element} - The rendered Radio component.
- */
 declare const Radio: import('../../../node_modules/react').ForwardRefExoticComponent<{
     /**
      * Override or extend the style applied to the component

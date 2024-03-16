@@ -1,4 +1,5 @@
-import { ElementType, ReactNode } from '../../../node_modules/react';
+import { ComponentPropsWithRef, ElementType, ReactNode } from '../../../node_modules/react';
+declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type ChipProps = {
     /**
      * Override or extend the style applied to the component.
@@ -42,11 +43,5 @@ export type ChipProps = {
      */
     variant?: "outlined" | "contained";
 };
-/**
- * Chip component for displaying tags or small interactive elements.
- * @param {ChipProps} props The props for the Chip component.
- * @param {React.Ref<HTMLDivElement>} ref The ref for the Chip.
- * @returns {JSX.Element} The Chip component.
- */
-declare const Chip: import('../../../node_modules/react').ForwardRefExoticComponent<ChipProps & import('../../../node_modules/react').RefAttributes<HTMLDivElement>>;
+declare const Chip: ({ className, color, deleteIcon, disabled, round, variant, children, onDelete, onClick, ...rest }: ChipProps, ref: PolymorphicRef<"div">) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Chip;
