@@ -17,5 +17,6 @@ export { StackProps } from "../src/components/Stack";
 export { SvgIconProps } from "../src/components/SvgIcon";
 export { SwitchProps } from "../src/components/Switch";
 export { TabsProps } from "../src/components/Tabs";
+export { TooltipProps } from "../src/components/Tooltip";
 export { TypographyProps } from "../src/components/Typography";
 export * from "./utils";
