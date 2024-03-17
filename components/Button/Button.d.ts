@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ElementType, ReactNode } from '../../../node_modules/react';
-export declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type ButtonProps<T extends ElementType> = {
     /**
      * The content of the component.

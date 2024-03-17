@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ElementType, ReactNode } from '../../../node_modules/react';
-declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type ChipProps = {
     /**
      * Override or extend the style applied to the component.

@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ElementType } from '../../../node_modules/react';
-import { PolymorphicRef } from "../../../types";
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type IconButtonProps<T extends ElementType> = {
     /**
      * The component to use.

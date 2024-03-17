@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ElementType, ReactNode } from '../../../node_modules/react';
-import { PolymorphicRef } from "../../../types/utils";
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type TypographyVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1" | "body2";
 export type TypographyWeight = "normal" | "medium" | "semiBold" | "bold";
 /**

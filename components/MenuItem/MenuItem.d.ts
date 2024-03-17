@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ElementType, ReactNode } from '../../../node_modules/react';
-import { PolymorphicRef } from "../../../types";
 import { ButtonProps } from "../Button";
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type MenuItemProps<T extends ElementType> = {
     /**
      * The content of the component.

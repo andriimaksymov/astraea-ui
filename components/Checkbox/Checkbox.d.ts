@@ -22,6 +22,6 @@ export type CheckboxProps = {
      */
     icon?: ElementType;
 } & ComponentPropsWithoutRef<"input">;
-export declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 declare const Checkbox: ({ className, label, icon: Icon, checkedIcon: CheckedIcon, labelPlacement, ...props }: CheckboxProps, ref: PolymorphicRef<"input">) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Checkbox;

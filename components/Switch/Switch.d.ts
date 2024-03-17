@@ -39,6 +39,6 @@ export type SwitchProps = {
      */
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
-declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 declare const Switch: ({ checked, className, disabled, label, labelPlacement, size, onChange, ...rest }: SwitchProps, ref: PolymorphicRef<"div">) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Switch;

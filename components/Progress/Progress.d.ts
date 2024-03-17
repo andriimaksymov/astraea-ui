@@ -37,5 +37,5 @@ export type ProgressProps = {
  * @param {ProgressProps} props - The props for the Progress component.
  * @returns {JSX.Element} - The rendered Progress component.
  */
-declare const Progress: ({ animated, color, className, classNameBar, label, progress, striped, }: ProgressProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
+declare const Progress: ({ animated, color, className, classNameBar, label, progress, striped, ...rest }: ProgressProps) => import('../../../node_modules/react/jsx-runtime').JSX.Element;
 export default Progress;

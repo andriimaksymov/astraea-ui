@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ElementType, HTMLAttributes, ReactNode } from '../../../node_modules/react';
-declare type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 export type CardElevation = 0 | 1 | 2 | 3 | 4 | 5;
 export type CardProps = {
     /**
