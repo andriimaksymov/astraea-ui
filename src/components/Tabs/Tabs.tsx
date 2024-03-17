@@ -15,7 +15,7 @@ export type TabsTab = {
   /**
    * The content to be displayed when this tab is selected.
    */
-  content: ReactNode;
+  content?: ReactNode;
 };
 
 export type TabsProps = {

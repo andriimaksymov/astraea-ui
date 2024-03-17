@@ -8,8 +8,7 @@ import clsx from "clsx";
 
 import styles from "./Button.module.sass";
 
-export declare type PolymorphicRef<T extends ElementType> =
-  ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 export type ButtonProps<T extends ElementType> = {
   /**

@@ -51,9 +51,10 @@ const Progress = ({
   label,
   progress = 0,
   striped,
+  ...rest
 }: ProgressProps) => {
   return (
-    <div className={clsx(styles.root, className)}>
+    <div className={clsx(styles.root, className)} {...rest}>
       <div
         className={clsx(styles.bar, styles[color], classNameBar, {
           [styles.striped]: striped,

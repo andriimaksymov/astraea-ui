@@ -11,8 +11,7 @@ import { IconButton } from "../IconButton";
 
 import styles from "./Chip.module.sass";
 
-declare type PolymorphicRef<T extends ElementType> =
-  ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 export type ChipProps = {
   /**

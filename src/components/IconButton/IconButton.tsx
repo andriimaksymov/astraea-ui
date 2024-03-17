@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { ComponentPropsWithRef, ElementType, forwardRef } from "react";
 
-import { PolymorphicRef } from "../../../types";
-
 import styles from "./IconButton.module.sass";
+
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 export type IconButtonProps<T extends ElementType> = {
   /**
@@ -80,7 +80,7 @@ const IconButtonBase = <T extends ElementType = "button">(
   const iconClassNames = clsx(styles.icon, iconClassName, styles[size]);
 
   return (
-    <Component ref={ref} {...rest} className={classNames}>
+    <Component ref={ref} disabled={disabled} {...rest} className={classNames}>
       <Icon className={iconClassNames} />
     </Component>
   );

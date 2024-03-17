@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 import PlusIcon from "../../../assets/icons/PlusIcon";
 
@@ -8,8 +8,21 @@ import IconButton from "../IconButton";
 describe("IconButton component", () => {
   it("should render iconButton component correctly", () => {
     render(<IconButton icon={PlusIcon} />);
-    const progress = screen.getByRole("button");
+    expect(screen.getByRole("button")).toBeInTheDocument();
+  });
 
-    expect(progress).toBeInTheDocument();
+  it("should render IconButton clickable", () => {
+    const handleClick = vi.fn();
+    const { getByRole } = render(
+      <IconButton icon={PlusIcon} onClick={handleClick} />,
+    );
+    const button = getByRole("button");
+    fireEvent.click(button);
+    expect(handleClick).toHaveBeenCalled();
+  });
+
+  it("should render IconButton disabled when disabled prop is true", () => {
+    render(<IconButton icon={PlusIcon} disabled />);
+    expect(screen.getByRole("button")).toBeDisabled();
   });
 });

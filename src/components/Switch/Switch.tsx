@@ -52,8 +52,7 @@ export type SwitchProps = {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-declare type PolymorphicRef<T extends ElementType> =
-  ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 /**
  * Switch component to implement toggle switches.

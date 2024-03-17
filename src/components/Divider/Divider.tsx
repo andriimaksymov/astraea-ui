@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { ComponentPropsWithoutRef, ReactNode } from "react";
 import clsx from "clsx";
 
 import styles from "./Divider.module.sass";
@@ -17,7 +17,7 @@ export type DividerProps = {
    * @default 'horizontal'
    */
   orientation?: "horizontal" | "vertical";
-} & HTMLAttributes<"div">;
+} & ComponentPropsWithoutRef<"div">;
 
 /**
  * Divider component for creating horizontal or vertical dividing lines.
@@ -29,6 +29,7 @@ const Divider = ({
   className,
   orientation = "horizontal",
   children,
+  ...rest
 }: DividerProps) => {
   const classNames = clsx(styles.root, styles[orientation], className, {
     [styles.withChildren]: children,
@@ -36,7 +37,7 @@ const Divider = ({
   });
 
   return (
-    <div className={classNames} data-testid="astraea-divider">
+    <div className={classNames} {...rest}>
       <span className={styles.inner}>{children}</span>
     </div>
   );

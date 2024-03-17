@@ -42,6 +42,7 @@ const DefaultCheckedIcon = ({ ...props }) => (
 /**
  * Radio component for selecting a single option from a list.
  * @param {RadioProps} props - The props for the Radio component.
+ * @param {PolymorphicRef<HTMLInputElement>} ref The ref for the Chip.
  * @returns {JSX.Element} - The rendered Radio component.
  */
 

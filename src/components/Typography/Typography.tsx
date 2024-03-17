@@ -6,9 +6,9 @@ import {
   ReactNode,
 } from "react";
 
-import { PolymorphicRef } from "../../../types/utils";
-
 import styles from "./Typography.module.sass";
+
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 export type TypographyVariant =
   | "h1"

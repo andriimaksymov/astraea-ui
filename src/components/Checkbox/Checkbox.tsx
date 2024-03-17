@@ -36,8 +36,7 @@ export type CheckboxProps = {
   icon?: ElementType;
 } & ComponentPropsWithoutRef<"input">;
 
-export declare type PolymorphicRef<T extends ElementType> =
-  ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 const CheckboxBase = (
   {

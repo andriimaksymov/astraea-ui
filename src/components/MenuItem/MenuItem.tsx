@@ -6,10 +6,11 @@ import {
   ReactNode,
 } from "react";
 
-import { PolymorphicRef } from "../../../types";
 import { ButtonProps } from "../Button";
 
 import styles from "./MenuItem.module.sass";
+
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 export type MenuItemProps<T extends ElementType> = {
   /**
@@ -54,7 +55,7 @@ const MenuItemBase = <T extends ElementType = "div">(
     styles.root,
     {
       [styles.active]: isActive,
-      // [styles.cursorPointer]: rest.onClick, // todo fix
+      [styles.cursorPointer]: rest.onClick,
     },
     className,
   );

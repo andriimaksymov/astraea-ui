@@ -9,8 +9,7 @@ import clsx from "clsx";
 
 import styles from "./Card.module.sass";
 
-declare type PolymorphicRef<T extends ElementType> =
-  ComponentPropsWithRef<T>["ref"];
+type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>["ref"];
 
 export type CardElevation = 0 | 1 | 2 | 3 | 4 | 5;
 

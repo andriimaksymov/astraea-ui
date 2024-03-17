@@ -10,6 +10,7 @@ export type PortalProps = {
 const Portal = ({ children, className, node }: PortalProps) => {
   const mount = document.getElementById("portal-root");
   const el = document.createElement("div");
+  el.classList.add("portal");
 
   useEffect(() => {
     if (className) {

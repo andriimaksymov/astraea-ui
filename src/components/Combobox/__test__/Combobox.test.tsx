@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import Combobox, { DEFAULT_COMBOBOX_ITEMS_LENGTH } from "../Combobox";
 
@@ -37,6 +37,23 @@ describe("Combobox component", () => {
       animals.length < DEFAULT_COMBOBOX_ITEMS_LENGTH
         ? animals.length
         : DEFAULT_COMBOBOX_ITEMS_LENGTH,
+    );
+  });
+
+  it("should render input field and accepts user input", async () => {
+    const onInputChange = vi.fn();
+    const { getByRole } = render(<Combobox onInputChange={onInputChange} />);
+    const input = getByRole("combobox");
+    fireEvent.change(input, { target: { value: "Test" } });
+    await waitFor(() => expect(onInputChange).toHaveBeenCalledWith("Test"));
+  });
+
+  it("should open dropdown menu when input field is clicked", () => {
+    render(<Combobox items={animals} />);
+    const input = screen.getByRole("combobox");
+    fireEvent.click(input);
+    expect(screen.getByTestId("astraea-combobox-menu")).toHaveClass(
+      /openSuggestionMenu/,
     );
   });
 });

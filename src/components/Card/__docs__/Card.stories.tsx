@@ -11,7 +11,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "Cards contain content about a single subject.",
+        component:
+          "The Card component is a versatile container that can be used to display various types of content.",
       },
     },
   },
